@@ -4,11 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>เครื่องคำนวณแคลอรี่ โปรตีน และอาหารเสริม</title>
-    
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    
+
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
@@ -43,7 +43,7 @@
             border-radius: 0.25rem;
         }
         #result-section { display: none; }
-        
+
         /* สไตล์สำหรับแท็บ */
         .tab-content { display: none; }
         .tab-content.active { display: block; }
@@ -67,45 +67,20 @@
             user-drag: none;
         }
 
-       /* สไตล์สำหรับตอนกดพิมพ์ (Print) */
-    @media print {
-        /* 1. ซ่อนทุกอย่างบนหน้าเว็บก่อน */
-        body * { visibility: hidden; }
-        
-        /* 2. แสดงเฉพาะแท็บที่กำลังเปิดใช้งานอยู่ (Active Tab) */
-        .tab-content.active, .tab-content.active * { visibility: visible; }
-        
-        /* 3. ดึงแท็บที่เปิดอยู่ขึ้นมาจัดระเบียบให้เต็มหน้ากระดาษ */
-        .tab-content.active { 
-            position: absolute; 
-            left: 0; 
-            top: 0; 
-            width: 100%; 
-            border: none; 
-            background: white; 
-            padding: 0;
+        /* สไตล์สำหรับตอนกดพิมพ์ (Print) */
+        @media print {
+            body * { visibility: hidden; }
+            .tab-content.active, .tab-content.active * { visibility: visible; }
+            .tab-content.active { position: absolute; left: 0; top: 0; width: 100%; border: none; background: white; padding: 0;}
+            .no-print { display: none !important; }
+            .print-border { border: 1px solid #e5e7eb !important; break-inside: avoid; }
         }
-        
-        /* 4. กฎทั่วไปสำหรับการพิมพ์: ซ่อนรูป, คลาส no-print และจัดเส้นขอบ */
-        .no-print { display: none !important; }
-        img { display: none !important; }
-        .print-border { border: 1px solid #e5e7eb !important; break-inside: avoid; }
-
-        /* --- 5. กฎพิเศษเฉพาะแท็บ 3 (ทำงานก็ต่อเมื่อแท็บ 3 เป็น active) --- */
-        /* ซ่อนช่องเลือกผลิตภัณฑ์และข้อความ label เพื่อให้เห็นแค่ผลการคำนวณ */
-        #tab-3 select, 
-        #tab-3 label { 
-            display: none !important; 
-        }
-    }
-</style>
-    }
     </style>
 </head>
 <body class="p-2 md:p-4 flex justify-center items-start min-h-screen">
 
     <div class="max-w-5xl w-full bg-white rounded-2xl shadow-lg overflow-hidden border border-gray-200">
-        
+
         <div class="bg-primary p-4 md:p-5 text-white no-print relative flex items-center justify-center min-h-[80px]">
             <a href="index.html" class="absolute left-4 md:left-5 bg-white/20 hover:bg-white/30 text-white px-3 py-2 rounded-lg text-sm font-medium transition flex items-center gap-2 shadow-sm">
                 <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -113,7 +88,7 @@
                 </svg>
                 <span class="hidden sm:inline">กลับหน้าหลัก</span>
             </a>
-            
+
             <div class="text-center">
                 <h1 class="text-xl md:text-2xl font-bold mb-1">โปรแกรมคำนวณโภชนาการ</h1>
                 <p class="text-sm md:text-base opacity-90">ประเมินพลังงาน โปรตีน และคำนวณอาหารเสริมทางการแพทย์</p>
@@ -227,7 +202,7 @@
                 <div class="text-center mb-6">
                     <h2 class="text-2xl font-bold text-gray-800">ผลการประเมินของคุณ</h2>
                 </div>
-                
+
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
                     <div class="bg-white rounded-xl shadow-sm border border-gray-200 p-5 text-center print-border">
                         <p class="text-[17px] text-gray-600 font-medium mb-1">ดัชนีมวลกาย (BMI)</p>
@@ -276,7 +251,7 @@
 
         <div id="tab-2" class="tab-content">
             <div class="p-5 md:p-8 space-y-8">
-                
+
                 <div class="bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden">
                     <div class="bg-blue-50 border-b border-blue-100 p-4">
                         <h2 class="text-xl font-bold text-blue-900 flex items-center gap-2">
@@ -615,7 +590,7 @@
 
         <div id="tab-3" class="tab-content">
             <div class="p-5 md:p-8 space-y-6">
-                
+
                 <div id="tab3-protein-summary" class="hidden bg-gray-50 rounded-xl p-4 shadow-sm border border-gray-200">
                     <div class="flex items-start md:items-center gap-3">
                         <div class="bg-white p-2 rounded-lg text-gray-600 shrink-0 border border-gray-200">
@@ -633,9 +608,9 @@
                 <div class="bg-white rounded-xl shadow-sm border border-green-600 overflow-hidden">
                     <div class="bg-green-600 p-4 text-white">
                         <h2 class="text-lg md:text-xl font-bold flex items-center gap-2">
-                           <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z" />
-</svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z" />
+                            </svg>
                            </h2>
                     </div>
 
@@ -649,7 +624,7 @@
                         <div id="sup-display-area" class="hidden">
                             <div class="flex flex-col sm:flex-row gap-5 items-center sm:items-start bg-gray-50 p-4 rounded-xl border border-gray-200">
                                 <img id="sup-image" src="" alt="Supplement Image" class="w-[150px] h-[150px] object-contain rounded-lg border border-gray-300 shadow-sm bg-white shrink-0">
-                                
+
                                 <div class="w-full text-center sm:text-left">
                                     <h3 id="sup-name" class="text-xl font-bold text-dark mb-1">Name</h3>
                                     <p id="sup-desc" class="text-[14px] text-gray-600 mb-3">Description</p>
@@ -662,7 +637,7 @@
                             <hr class="my-6 border-gray-200">
 
                             <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                                <div class="bg-slate-50 border border-gray-200 rounded-xl p-5 shadow-md">
+                                <div class="bg-blue-50 border border-blue-200 rounded-xl p-5 shadow-md">
                                     <h4 class="font-bold text-gray-800 mb-3 flex items-center gap-2">
                                         <span class="bg-blue-200 text-blue-800 w-6 h-6 rounded-full flex items-center justify-center text-sm">1</span>
                                         คำนวณหาปริมาณที่ต้องทาน
@@ -686,7 +661,7 @@
                                     </div>
                                 </div>
 
-                                <div class="bg-yellow-50 border border-gray-200 rounded-xl p-5 shadow-md">
+                             <div class="bg-yellow-50 border border-gray-200 rounded-xl p-5 shadow-sm">
                                     <h4 class="font-bold text-gray-800 mb-3 flex items-center gap-2">
                                         <span class="bg-yellow-200 text-yellow-800 w-6 h-6 rounded-full flex items-center justify-center text-sm">2</span>
                                         คำนวณโปรตีนที่จะได้รับ
@@ -704,14 +679,18 @@
                                             <div class="mt-1">
                                                 <span id="calc-res-protein" class="text-2xl font-bold text-dark">0.0</span> 
                                                 <span class="font-medium text-gray-700 ml-1">กรัม</span>
-                                                  <div class="mt-6 flex justify-center no-print">
-                    <button onclick="window.print()" class="bg-dark hover:bg-black text-white px-6 py-3 rounded-xl shadow-md font-semibold flex items-center gap-2 transition">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 17h2a2 2 0 002-2v-4a2 2 0 00-2-2H5a2 2 0 00-2 2v4a2 2 0 002 2h2m2 4h6a2 2 0 002-2v-4a2 2 0 00-2-2H9a2 2 0 00-2 2v4a2 2 0 002 2zm8-12V5a2 2 0 00-2-2H9a2 2 0 00-2 2v4h10z" />
-                        </svg>
-                        พิมพ์ผลลัพธ์
-                    </button>
                                             </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div> <div class="mt-8 flex justify-center no-print" id="combined-print-btn-container">
+                                <button onclick="printCombinedReport()" class="bg-green-600 hover:bg-green-800 text-white px-8 py-3 rounded-full shadow-md font-bold flex items-center gap-3 transition duration-200">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 17h2a2 2 0 002-2v-4a2 2 0 00-2-2H5a2 2 0 00-2 2v4a2 2 0 002 2h2m2 4h6a2 2 0 002-2v-4a2 2 0 00-2-2H9a2 2 0 00-2 2v4a2 2 0 002 2zm8-12V5a2 2 0 00-2-2H9a2 2 0 00-2 2v4h10z" />
+                                    </svg>
+                                    พิมพ์รายงาน (ผลโปรตีนต่อวัน + อาหารเสริมที่เลือก)
+                                </button>
+                            </div>
                                         </div>
                                     </div>
                                 </div>
@@ -719,14 +698,14 @@
                         </div>
                     </div>
                 </div>
-                
+
                 <div class="mt-8 border-t border-gray-200 pt-6">
-                    <h3 class="text-lg font-bold text-dark mb-4 pl-2 border-l-4 border-gray-400">ตารางตัวอย่างอ้างอิง: ข้อมูลปริมาณโปรตีนของอาหารทางการแพทย์</h3>
+                    <h3 class="text-lg font-bold text-dark mb-4 pl-2 border-l-4 border-gray-400">ตารางอ้างอิง: ข้อมูลปริมาณโปรตีนต่อ 1 หน่วยบริโภค</h3>
                     <div class="overflow-x-auto rounded-xl border border-gray-200 shadow-sm">
                         <table class="w-full text-left border-collapse min-w-[500px]">
                             <thead>
                                 <tr class="bg-gray-100 text-gray-700 text-[15px]">
-                                    <th class="p-3 border-b border-gray-200 w-[60%]">ตัวอย่างผลิตภัณฑ์</th>
+                                    <th class="p-3 border-b border-gray-200 w-[60%]">รูปและชื่อผลิตภัณฑ์</th>
                                     <th class="p-3 border-b border-gray-200 w-[40%] text-center">ปริมาณโปรตีนที่ได้</th>
                                 </tr>
                             </thead>
@@ -762,15 +741,15 @@
             const foodSelect = document.getElementById('food-select');
             const unitSelect = document.getElementById('unit-select');
             const selectedOption = foodSelect.options[foodSelect.selectedIndex];
-            
+
             unitSelect.innerHTML = ''; 
-            
+
             const u1 = selectedOption.getAttribute('data-u1');
             const v1 = selectedOption.getAttribute('data-v1');
             if (u1 && v1) {
                 unitSelect.innerHTML += `<option value="${v1}">${u1}</option>`;
             }
-            
+
             const u2 = selectedOption.getAttribute('data-u2');
             const v2 = selectedOption.getAttribute('data-v2');
             if (u2 && v2) {
@@ -782,7 +761,7 @@
             const foodSelect = document.getElementById('food-select');
             const amountInput = document.getElementById('food-amount').value;
             const unitSelect = document.getElementById('unit-select');
-            
+
             if (!amountInput || parseFloat(amountInput) <= 0) {
                 alert("กรุณาระบุปริมาณวัตถุดิบครับ");
                 return;
@@ -792,7 +771,7 @@
             const foodName = foodSelect.options[foodSelect.selectedIndex].text;
             const selectedUnitText = unitSelect.options[unitSelect.selectedIndex].text;
             const proteinPerUnit = parseFloat(unitSelect.value);
-            
+
             const calculatedProtein = amount * proteinPerUnit;
 
             mealItems.push({
@@ -814,7 +793,7 @@
         function renderMealItems() {
             const tbody = document.getElementById('meal-items-tbody');
             tbody.innerHTML = '';
-            
+
             let totalProtein = 0;
 
             if (mealItems.length === 0) {
@@ -862,7 +841,7 @@
         function initSupplementDropdown() {
             const select = document.getElementById('sup-select');
             select.innerHTML = '<option value="" disabled selected>-- กรุณาเลือกผลิตภัณฑ์ --</option>';
-            
+
             for (const [id, data] of Object.entries(supplementData)) {
                 select.innerHTML += `<option value="${id}">${data.name}</option>`;
             }
@@ -871,7 +850,7 @@
         function renderSupplementTable() {
             const tbody = document.getElementById('sup-reference-tbody');
             tbody.innerHTML = '';
-            
+
             for (const [id, data] of Object.entries(supplementData)) {
                 tbody.innerHTML += `
                     <tr class="border-b border-gray-100 hover:bg-gray-50">
@@ -896,11 +875,11 @@
         function updateSupplementUI() {
             const select = document.getElementById('sup-select');
             const id = select.value;
-            
+
             if (!id) return;
 
             const data = supplementData[id];
-            
+
             // แสดงพื้นที่เครื่องมือ
             document.getElementById('sup-display-area').classList.remove('hidden');
 
@@ -908,7 +887,7 @@
             document.getElementById('sup-name').innerText = data.name;
             document.getElementById('sup-desc').innerText = data.desc;
             document.getElementById('sup-protein-per-unit').innerText = data.pPerScoop.toFixed(2);
-            
+
             const imgEl = document.getElementById('sup-image');
             imgEl.src = data.img;
             imgEl.onerror = function() {
@@ -935,10 +914,10 @@
 
             const data = supplementData[id];
             const reqProtein = parseFloat(document.getElementById('calc-req-protein').value) || 0;
-            
+
             const requiredScoops = reqProtein / data.pPerScoop;
             const requiredGrams = requiredScoops * data.gPerScoop;
-            
+
             document.getElementById('calc-res-scoops').innerText = requiredScoops.toFixed(2);
             document.getElementById('calc-res-grams').innerText = requiredGrams.toFixed(1);
         }
@@ -950,9 +929,9 @@
 
             const data = supplementData[id];
             const useScoops = parseFloat(document.getElementById('calc-use-scoops').value) || 0;
-            
+
             const receivedProtein = useScoops * data.pPerScoop;
-            
+
             document.getElementById('calc-res-protein').innerText = receivedProtein.toFixed(2);
         }
 
@@ -1037,60 +1016,9 @@
                 const tdee = bmr * activity;
                 let targetCalories = Math.max(Math.round(tdee + goal), 1200);
 
-                let minProtein = 0; let maxProtein = 0; let htmlOutput = "";
-
-                if (isDkdDialysis) {
-                    minProtein = weight * 1.0; maxProtein = weight * 1.2;
-                    htmlOutput += `<p class="font-bold text-gray-800">2. กลุ่มผู้ป่วยโรคเบาหวานชนิดที่ 2 และโรคไตเรื้อรัง</p>`;
-                    htmlOutput += `<p class="ml-4 text-gray-700 font-medium">• แนะนำ 1.0 - 1.2 กรัม / กก. / วัน</p>`;
-                } else if (isDkdNon) {
-                    minProtein = weight * 0.6; maxProtein = weight * 0.8;
-                    htmlOutput += `<p class="font-bold text-gray-800">2. กลุ่มผู้ป่วยโรคเบาหวานชนิดที่ 2 และโรคไตเรื้อรัง (ยังไม่ฟอกไต)</p>`;
-                    htmlOutput += `<p class="ml-4 text-gray-700 font-medium">• แนะนำ 0.6 - 0.8 กรัม / กก. / วัน</p>`;
-                } else {
-                    let minPercent = 0.10; let maxPercent = 0.35;
-                    let adjustedAge = Math.max(age, 2);
-                    htmlOutput += `<p class="font-bold text-gray-800">1. กลุ่มบุคคลทั่วไป (สุขภาพดี)</p>`;
-                    if (isPregnant || isBreastfeeding) {
-                        maxPercent = (adjustedAge <= 18) ? 0.30 : 0.35;
-                        htmlOutput += `<p class="ml-4 text-gray-700 font-medium">• สตรีมีครรภ์/ให้นมบุตร: ${minPercent*100} - ${maxPercent*100}% ของพลังงานรวม</p>`;
-                    } else {
-                        if (adjustedAge <= 3) { minPercent = 0.05; maxPercent = 0.20; }
-                        else if (adjustedAge <= 18) { maxPercent = 0.30; }
-                        htmlOutput += `<p class="text-gray-700 font-medium">• ตามช่วงอายุ: ${minPercent*100} - ${maxPercent*100}% ของพลังงานรวม</p>`;
-                    }
-                    minProtein = (targetCalories * minPercent) / 4;
-                    maxProtein = (targetCalories * maxPercent) / 4;
-
-                    if (isDiabetes) {
-                        htmlOutput += `<hr class="my-3 border-gray-200"><p class="font-bold text-gray-800">2. กลุ่มผู้ป่วยโรคเบาหวานชนิดที่ 2</p>`;
-                        htmlOutput += `<p class="ml-4 text-gray-700 font-medium">• แนะนำโปรตีนสูงเพื่อคุมระดับน้ำตาล</p>`;
-                    }
-                }
-
-                document.getElementById('res-bmi-value').innerText = bmi.toFixed(1);
-                document.getElementById('res-bmi-text').innerText = bmiCategory;
-                document.getElementById('res-bmi-text').className = `text-[16px] font-medium mt-1 ${bmiColor}`;
-                document.getElementById('res-calories').innerText = targetCalories.toLocaleString('th-TH');
-                
-                const finalProteinStr = `${Math.round(minProtein)} - ${Math.round(maxProtein)}`;
-                document.getElementById('res-protein').innerText = finalProteinStr;
-                document.getElementById('res-protein-detail').innerHTML = htmlOutput;
-                document.getElementById('tab3-target-protein').innerText = finalProteinStr;
-                document.getElementById('tab3-protein-summary').classList.remove('hidden');
-
-                const resultSection = document.getElementById('result-section');
-                resultSection.style.display = 'block';
-                setTimeout(() => resultSection.scrollIntoView({ behavior: 'smooth', block: 'start' }), 100);
-
-            } catch (error) {
-                console.error("Calculation Error:", error);
-                alert("เกิดข้อผิดพลาดในการคำนวณ โปรดตรวจสอบข้อมูลอีกครั้งครับ");
-            }
-        }
-let minProtein = 0; let maxProtein = 0;
+               let minProtein = 0; let maxProtein = 0;
                 let userSpecificText = "";
-                let refDetails = ""; // ตัวแปรสำหรับเก็บข้อมูลอ้างอิงเฉพาะกลุ่ม
+                let refDetails = "";
 
                 if (isDkdDialysis) {
                     minProtein = weight * 1.0; maxProtein = weight * 1.2;
@@ -1127,7 +1055,7 @@ let minProtein = 0; let maxProtein = 0;
                     `;
 
                 } else {
-let minPercent = 0.10; let maxPercent = 0.35;
+                    let minPercent = 0.10; let maxPercent = 0.35;
                     let adjustedAge = Math.max(age, 2);
                     let targetRef = ""; 
                     
@@ -1200,6 +1128,7 @@ let minPercent = 0.10; let maxPercent = 0.35;
                 alert("เกิดข้อผิดพลาดในการคำนวณ โปรดตรวจสอบข้อมูลอีกครั้งครับ");
             }
         }
+
        // Initialize
         document.addEventListener('DOMContentLoaded', () => {
             updateUnits();
@@ -1217,6 +1146,9 @@ let minPercent = 0.10; let maxPercent = 0.35;
             e.preventDefault(); 
         });
 
+    </script>
+</body>
+</html>
     </script>
 </body>
 </html>
