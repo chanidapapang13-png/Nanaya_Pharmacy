@@ -29,6 +29,13 @@
     </script>
 
     <style>
+       img {
+            -webkit-user-drag: none;  
+            -khtml-user-drag: none;
+            -moz-user-drag: none;
+            -o-user-drag: none;
+            user-drag: none;
+        }
         html { font-size: 16px; }
         body {
             background-color: transparent;
@@ -902,5 +909,29 @@
             renderSupplements(); 
         });
     </script>
+    // Initialize
+        document.addEventListener('DOMContentLoaded', () => {
+            updateUnits();
+            renderSupplements(); 
+        });
+
+        // ---------------------------------------------------------
+        // เพิ่มโค้ดป้องกันการ Copy และคลิกขวา ตรงนี้ครับ 👇
+        // ---------------------------------------------------------
+        
+        // 1. ดักจับและยกเลิกคำสั่ง Copy (Ctrl+C / Cmd+C หรือกดคัดลอกผ่านมือถือ)
+        document.addEventListener('copy', function(e) {
+            e.preventDefault(); // สั่งยกเลิกการก๊อปปี้
+            // alert('ขออภัย ไม่อนุญาตให้คัดลอกเนื้อหาครับ'); // เอา // ข้างหน้าออก ถ้าอยากให้มีแจ้งเตือนเด้งขึ้นมา
+        });
+
+        // 2. ดักจับและยกเลิกการคลิกขวา (ป้องกันการคลิกขวา -> Copy / Save Image)
+        document.addEventListener('contextmenu', function(e) {
+            e.preventDefault(); // สั่งยกเลิกการคลิกขวา
+        });
+
+    </script>
+</body>
+</html>
 </body>
 </html>
