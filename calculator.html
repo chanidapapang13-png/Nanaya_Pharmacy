@@ -587,8 +587,7 @@
 
             </div>
         </div>
-
-        <div id="tab-3" class="tab-content">
+<div id="tab-3" class="tab-content">
             <div class="p-5 md:p-8 space-y-6">
 
                 <div id="tab3-protein-summary" class="hidden bg-gray-50 rounded-xl p-4 shadow-sm border border-gray-200">
@@ -611,14 +610,15 @@
                             <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z" />
                             </svg>
-                           </h2>
+                            เครื่องมือคำนวณอาหารเสริมทางการแพทย์
+                        </h2>
                     </div>
 
                     <div class="p-5 md:p-6 space-y-6">
                         <div>
                             <label class="block font-semibold mb-2 text-dark text-[16px]">เลือกผลิตภัณฑ์ที่ต้องการทาน</label>
                             <select id="sup-select" onchange="updateSupplementUI()" class="w-full bg-gray-50 border border-gray-300 rounded-xl p-3 outline-none focus:border-green-600 focus:ring-1 focus:ring-green-600 text-[15px] font-medium cursor-pointer">
-                                </select>
+                            </select>
                         </div>
 
                         <div id="sup-display-area" class="hidden">
@@ -637,6 +637,7 @@
                             <hr class="my-6 border-gray-200">
 
                             <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                
                                 <div class="bg-blue-50 border border-blue-200 rounded-xl p-5 shadow-md">
                                     <h4 class="font-bold text-gray-800 mb-3 flex items-center gap-2">
                                         <span class="bg-blue-200 text-blue-800 w-6 h-6 rounded-full flex items-center justify-center text-sm">1</span>
@@ -661,7 +662,7 @@
                                     </div>
                                 </div>
 
-                             <div class="bg-yellow-50 border border-gray-200 rounded-xl p-5 shadow-sm">
+                                <div class="bg-yellow-50 border border-yellow-200 rounded-xl p-5 shadow-md">
                                     <h4 class="font-bold text-gray-800 mb-3 flex items-center gap-2">
                                         <span class="bg-yellow-200 text-yellow-800 w-6 h-6 rounded-full flex items-center justify-center text-sm">2</span>
                                         คำนวณโปรตีนที่จะได้รับ
@@ -683,7 +684,9 @@
                                         </div>
                                     </div>
                                 </div>
-                            </div> <div class="mt-8 flex justify-center no-print" id="combined-print-btn-container">
+                            </div>
+
+                            <div class="mt-8 flex justify-center no-print" id="combined-print-btn-container">
                                 <button onclick="printCombinedReport()" class="bg-green-600 hover:bg-green-800 text-white px-8 py-3 rounded-full shadow-md font-bold flex items-center gap-3 transition duration-200">
                                     <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 17h2a2 2 0 002-2v-4a2 2 0 00-2-2H5a2 2 0 00-2 2v4a2 2 0 002 2h2m2 4h6a2 2 0 002-2v-4a2 2 0 00-2-2H9a2 2 0 00-2 2v4a2 2 0 002 2zm8-12V5a2 2 0 00-2-2H9a2 2 0 00-2 2v4h10z" />
@@ -691,12 +694,8 @@
                                     พิมพ์รายงาน (ผลโปรตีนต่อวัน + อาหารเสริมที่เลือก)
                                 </button>
                             </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+
+                        </div> </div>
                 </div>
 
                 <div class="mt-8 border-t border-gray-200 pt-6">
@@ -710,16 +709,13 @@
                                 </tr>
                             </thead>
                             <tbody class="text-[15px] text-gray-800 bg-white" id="sup-reference-tbody">
-                                </tbody>
+                            </tbody>
                         </table>
                     </div>
                 </div>
 
             </div>
         </div>
-
-    </div>
-
     <script>
         // === ฟังก์ชันสลับแท็บ ===
         function switchTab(tabId, btnElement) {
