@@ -1024,7 +1024,7 @@
                         <p class="font-bold text-orange-700 text-[14px]">กลุ่มผู้ป่วยโรคเบาหวานชนิดที่ 2 และโรคไตเรื้อรัง (ฟอกไตแล้ว)</p>
                         <p class="mb-1">อ้างอิงจากเอกสาร <span class="italic">Current Guidelines on Dietary Protein Intake for Patients with Diabetic Kidney Disease A Scoping Review</span>:</p>
                         <ul class="list-disc pl-5 space-y-1">
-                            <li><span class="font-semibold">ผู้ป่วยโรคไตเรื้อรังจากเบาหวาน ที่ต้องรับการฟอกไต (CKD 5D / Dialysis):</span>
+                            <li><span class="font-semibold">ผู้ป่วยที่ได้รับการฟอกไต (CKD 5D / Dialysis):</span>
                                 <ul class="pl-5 mt-1 space-y-1" style="list-style-type: circle;">
                                     <li>แนวทางของ KDOQI ปี 2020 แนะนำปริมาณโปรตีนที่ 1.0 - 1.2 กรัม/น้ำหนักตัว 1 กิโลกรัม/วัน</li>
                                 </ul>
@@ -1040,7 +1040,7 @@
                         <p class="font-bold text-orange-700 text-[14px]">กลุ่มผู้ป่วยโรคเบาหวานชนิดที่ 2 และโรคไตเรื้อรัง (ยังไม่ฟอกไต)</p>
                         <p class="mb-1">อ้างอิงจากเอกสาร <span class="italic">Current Guidelines on Dietary Protein Intake for Patients with Diabetic Kidney Disease A Scoping Review</span>:</p>
                         <ul class="list-disc pl-5 space-y-1">
-                            <li><span class="font-semibold">ผู้ป่วยโรคไตเรื้อรังจากเบาหวาน ระยะที่ยังไม่ฟอกไต (Nondialysis-dependent CKD / CKD 3-5):</span>
+                            <li><span class="font-semibold">ผู้ป่วยโรคไตระยะที่ยังไม่ฟอกไต (Nondialysis-dependent CKD / CKD 3-5):</span>
                                 <ul class="pl-5 mt-1 space-y-1" style="list-style-type: circle;">
                                     <li>แนวทางของ KDOQI ปี 2020 แนะนำปริมาณโปรตีนที่ 0.6 - 0.8 กรัม/น้ำหนักตัว 1 กิโลกรัม/วัน (อ้างอิงหน้า 5)</li>
                                     <li>แนวทางปฏิบัติส่วนใหญ่ (เช่น ADA, KDIGO และ Diabetes Canada) แนะนำให้จำกัดปริมาณโปรตีนสูงสุดที่ 0.8 กรัม/น้ำหนักตัว 1 กิโลกรัม/วัน (อ้างอิงหน้า 3, Table 1 และหน้า 5)</li>
@@ -1124,8 +1124,7 @@
                 alert("เกิดข้อผิดพลาดในการคำนวณ โปรดตรวจสอบข้อมูลอีกครั้งครับ");
             }
         }
-
-       // Initialize
+// Initialize
         document.addEventListener('DOMContentLoaded', () => {
             updateUnits();
             initSupplementDropdown(); 
@@ -1142,10 +1141,15 @@
             e.preventDefault(); 
         });
 
+        // --- เพิ่มฟังก์ชันสั่งปริ้นแท็บ 3 ไว้ตรงนี้ครับ ---
+        function printCombinedReport() {
+            document.body.classList.add('focus-print-tab3');
+            window.print();
+            setTimeout(() => {
+                document.body.classList.remove('focus-print-tab3');
+            }, 500);
+        }
+
     </script>
 </body>
-</html>
-    </script>
-</body>
-</html>
 </html>
