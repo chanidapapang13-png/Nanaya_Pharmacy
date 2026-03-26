@@ -903,35 +903,22 @@
             }
         }
 
-        // Initialize
-        document.addEventListener('DOMContentLoaded', () => {
-            updateUnits();
-            renderSupplements(); 
-        });
-    </script>
-    // Initialize
+       // Initialize
         document.addEventListener('DOMContentLoaded', () => {
             updateUnits();
             renderSupplements(); 
         });
 
-        // ---------------------------------------------------------
-        // เพิ่มโค้ดป้องกันการ Copy และคลิกขวา ตรงนี้ครับ 👇
-        // ---------------------------------------------------------
-        
-        // 1. ดักจับและยกเลิกคำสั่ง Copy (Ctrl+C / Cmd+C หรือกดคัดลอกผ่านมือถือ)
+        // 1. ดักจับและยกเลิกคำสั่ง Copy (ป้องกันการคลุมดำแล้วกดคัดลอก)
         document.addEventListener('copy', function(e) {
-            e.preventDefault(); // สั่งยกเลิกการก๊อปปี้
-            // alert('ขออภัย ไม่อนุญาตให้คัดลอกเนื้อหาครับ'); // เอา // ข้างหน้าออก ถ้าอยากให้มีแจ้งเตือนเด้งขึ้นมา
+            e.preventDefault(); 
         });
 
-        // 2. ดักจับและยกเลิกการคลิกขวา (ป้องกันการคลิกขวา -> Copy / Save Image)
+        // 2. ดักจับและยกเลิกการคลิกขวา (ป้องกัน Save Image / Copy)
         document.addEventListener('contextmenu', function(e) {
-            e.preventDefault(); // สั่งยกเลิกการคลิกขวา
+            e.preventDefault(); 
         });
 
     </script>
-</body>
-</html>
 </body>
 </html>
