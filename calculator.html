@@ -148,9 +148,9 @@
                     <div>
                         <label class="block font-semibold mb-2 text-dark text-[17px]" for="goal">เป้าหมายน้ำหนัก</label>
                         <select id="goal" class="w-full bg-blue-50 border border-blue-300 rounded-xl p-3 focus:border-primary focus:ring-1 focus:ring-primary outline-none text-[17px] cursor-pointer transition font-medium text-blue-800">
-                            <option value="0">⚖️ รักษาน้ำหนัก</option>
-                            <option value="-500">📉 ลดน้ำหนัก (หัก 500 kcal)</option>
-                            <option value="500">📈 เพิ่มน้ำหนัก/กล้ามเนื้อ (เพิ่ม 500 kcal)</option>
+                            <option value="0">รักษาน้ำหนัก</option>
+                            <option value="-500">ลดน้ำหนัก (หัก 500 kcal)</option>
+                            <option value="500">เพิ่มน้ำหนัก/กล้ามเนื้อ (เพิ่ม 500 kcal)</option>
                         </select>
                     </div>
                 </div>
@@ -221,7 +221,7 @@
                     </div>
 
                     <div class="bg-white rounded-xl shadow-sm border border-green-200 p-5 text-center print-border">
-                        <p class="text-[17px] text-gray-600 font-medium mb-1">🥩 โปรตีน</p>
+                        <p class="text-[17px] text-gray-600 font-medium mb-1">โปรตีน</p>
                         <div class="text-secondary font-bold mb-1">
                             <span id="res-protein" class="text-3xl md:text-4xl">0 - 0</span>
                             <span class="text-[16px] ml-1 text-gray-600 font-normal block sm:inline">กรัม/วัน</span>
@@ -253,9 +253,9 @@
             <div class="p-5 md:p-8 space-y-8">
                 
                 <div class="bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden">
-                    <div class="bg-indigo-50 border-b border-indigo-100 p-4">
-                        <h2 class="text-xl font-bold text-indigo-900 flex items-center gap-2">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-indigo-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <div class="bg-blue-50 border-b border-blue-100 p-4">
+                        <h2 class="text-xl font-bold text-blue-900 flex items-center gap-2">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z" />
                             </svg>
                             เครื่องคำนวณโปรตีนมื้ออาหาร (ผสมวัตถุดิบ)
@@ -263,7 +263,7 @@
                     </div>
                     <div class="p-4 md:p-5">
                         <div class="flex flex-col md:flex-row gap-3 mb-4">
-                            <select id="food-select" onchange="updateUnits()" class="flex-[2] bg-gray-50 border border-gray-300 rounded-lg p-3 outline-none focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500 text-[15px]">
+                            <select id="food-select" onchange="updateUnits()" class="flex-[2] bg-gray-50 border border-gray-300 rounded-lg p-3 outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500 text-[15px]">
                                 <optgroup label="เนื้อสัตว์">
                                     <option data-u1="กรัม" data-v1="0.22" data-u2="ขีด (100g)" data-v2="22.0">อกไก่ (ลอกหนัง)</option>
                                     <option data-u1="ช้อนโต๊ะ (สุก)" data-v1="3.0" data-u2="กรัม" data-v2="0.20">หมูสับ / ไก่บด</option>
@@ -289,9 +289,9 @@
                                     <option data-u1="ขีด (100g)" data-v1="10.5" data-u2="กรัม" data-v2="0.105">ถั่วแระญี่ปุ่น (เฉพาะเม็ด)</option>
                                 </optgroup>
                             </select>
-                            <input type="number" id="food-amount" min="0.1" step="0.1" class="flex-1 md:w-24 bg-gray-50 border border-gray-300 rounded-lg p-3 outline-none focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500" placeholder="ระบุปริมาณ">
-                            <select id="unit-select" class="flex-1 md:w-32 bg-gray-50 border border-gray-300 rounded-lg p-3 outline-none focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500"></select>
-                            <button onclick="addMealItem()" class="bg-indigo-600 hover:bg-indigo-700 text-white font-bold py-3 px-6 rounded-lg transition">เพิ่ม</button>
+                            <input type="number" id="food-amount" min="0.1" step="0.1" class="flex-1 md:w-24 bg-gray-50 border border-gray-300 rounded-lg p-3 outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500" placeholder="ระบุปริมาณ">
+                            <select id="unit-select" class="flex-1 md:w-32 bg-gray-50 border border-gray-300 rounded-lg p-3 outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500"></select>
+                            <button onclick="addMealItem()" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-lg transition">เพิ่ม</button>
                         </div>
                         <div class="bg-gray-50 rounded-lg border border-gray-200 min-h-[100px]">
                             <table class="w-full text-left border-collapse">
@@ -308,9 +308,9 @@
                                 </tbody>
                             </table>
                         </div>
-                        <div class="mt-4 flex justify-between items-center bg-indigo-50 p-4 rounded-lg border border-indigo-100">
+                        <div class="mt-4 flex justify-between items-center bg-blue-50 p-4 rounded-lg border border-blue-100">
                             <span class="font-bold text-gray-800">โปรตีนรวมในมื้อนี้:</span>
-                            <div class="text-indigo-700 font-bold"><span id="total-meal-protein" class="text-3xl">0.0</span> กรัม</div>
+                            <div class="text-blue-700 font-bold"><span id="total-meal-protein" class="text-3xl">0.0</span> กรัม</div>
                         </div>
                     </div>
                 </div>
@@ -318,12 +318,14 @@
                 <hr class="border-gray-200">
 
                 <div>
-                    <h2 class="text-xl font-bold text-gray-800 mb-2 border-l-4 border-secondary pl-3">ไอเดียเมนูอาหารโปรตีนสูง (เคี้ยวง่าย ย่อยง่าย)</h2>
-                    <p class="text-[14px] text-gray-600 mb-4 bg-gray-100 p-2 rounded inline-block">เมนูเหล่านี้ออกแบบมาให้เนื้อสัมผัสนุ่ม ย่อยง่าย เหมาะสำหรับผู้สูงอายุ เด็ก หรือผู้ที่ต้องการอาหารอ่อน</p>
+                    <h2 class="text-xl font-bold text-gray-800 mb-2 border-l-4 border-gray-400 pl-3">ไอเดียเมนูอาหารโปรตีนสูง</h2>
+                    <div class="bg-yellow-50 border-l-4 border-yellow-400 p-3 rounded text-[14px] text-gray-700 font-medium mb-4">
+                        คำแนะนำ: เมนูเหล่านี้ออกแบบมาให้เนื้อสัมผัสนุ่ม ย่อยง่าย เหมาะสำหรับผู้สูงอายุ เด็ก หรือผู้ที่ต้องการอาหารอ่อน
+                    </div>
 
                     <div class="space-y-6">
                         <div>
-                            <h3 class="font-bold text-lg text-gray-700 mb-3 flex items-center gap-2">มื้อเช้า</h3>
+                            <h3 class="font-bold text-lg text-amber-700 bg-amber-50 p-2 rounded-lg border-l-4 border-amber-500 mb-3">มื้อเช้า</h3>
                             <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
                                 <div class="bg-white p-4 rounded-xl border border-gray-200 shadow-sm hover:shadow-md transition">
                                     <h4 class="font-bold text-[16px] text-dark mb-2">ข้าวต้มปลาแซลมอนสับ</h4>
@@ -362,7 +364,7 @@
                         </div>
 
                         <div>
-                            <h3 class="font-bold text-lg text-gray-700 mb-3 flex items-center gap-2">มื้อกลางวัน</h3>
+                            <h3 class="font-bold text-lg text-orange-700 bg-orange-50 p-2 rounded-lg border-l-4 border-orange-500 mb-3">มื้อกลางวัน</h3>
                             <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
                                 <div class="bg-white p-4 rounded-xl border border-gray-200 shadow-sm hover:shadow-md transition">
                                     <h4 class="font-bold text-[16px] text-dark mb-2">แกงจืดเต้าหู้ไข่หมูสับตำลึง</h4>
@@ -401,7 +403,7 @@
                         </div>
 
                         <div>
-                            <h3 class="font-bold text-lg text-gray-700 mb-3 flex items-center gap-2">มื้อเย็น</h3>
+                            <h3 class="font-bold text-lg text-indigo-700 bg-indigo-50 p-2 rounded-lg border-l-4 border-indigo-500 mb-3">มื้อเย็น</h3>
                             <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
                                 <div class="bg-white p-4 rounded-xl border border-gray-200 shadow-sm hover:shadow-md transition">
                                     <h4 class="font-bold text-[16px] text-dark mb-2">ซุปฟักทองใส่ไข่และไก่สับ</h4>
@@ -446,8 +448,8 @@
 
                 <div>
                     <h2 class="text-xl font-bold text-gray-800 mb-4 border-l-4 border-gray-400 pl-3">ตารางอ้างอิง: ปริมาณเพื่อให้ได้โปรตีน ~20 กรัม</h2>
-                    <div class="bg-gray-100 rounded-xl p-4 mb-4 text-gray-700 text-[15px]">
-                        <p>ข้อมูลในตารางด้านล่างนี้ เป็นการเทียบปริมาณอาหารดิบเพื่อให้ได้โปรตีนประมาณ 20 กรัม เพื่อให้ง่ายต่อการกะปริมาณด้วยสายตา</p>
+                    <div class="bg-blue-50 border-l-4 border-blue-400 p-3 rounded text-[14px] text-gray-700 font-medium mb-4">
+                        ข้อมูลในตารางด้านล่างนี้ เป็นการเทียบปริมาณอาหารดิบเพื่อให้ได้โปรตีนประมาณ 20 กรัม เพื่อให้ง่ายต่อการกะปริมาณด้วยสายตา
                     </div>
 
                     <div class="overflow-x-auto rounded-xl border border-gray-200 shadow-sm">
@@ -466,7 +468,7 @@
                                     <td class="p-3 border-b border-gray-100">อกไก่ (ลอกหนัง)</td>
                                     <td class="p-3 text-center font-bold text-gray-800 border-b border-gray-100">90 - 100 กรัม</td>
                                     <td class="p-3 leading-relaxed border-b border-gray-100">
-                                        <span class="font-bold text-dark">โปรตีนสูง ไขมันต่ำ</span><br>ควรตุ๋นหรือสับละเอียดให้เคี้ยวและย่อยง่าย
+                                        <span class="font-bold text-green-700">โปรตีนสูง ไขมันต่ำ</span><br>ควรตุ๋นหรือสับละเอียดให้เคี้ยวและย่อยง่าย
                                     </td>
                                 </tr>
                                 <tr class="hover:bg-gray-50 border-b border-gray-200">
@@ -481,14 +483,14 @@
                                     <td class="p-3 border-b border-gray-100">หมูสันใน (ไม่ติดมัน)</td>
                                     <td class="p-3 text-center font-bold text-gray-800 border-b border-gray-100">100 กรัม</td>
                                     <td class="p-3 leading-relaxed border-b border-gray-100">
-                                        บำรุงกล้ามเนื้อ ควรต้มหรือสับละเอียดเพื่อป้องกันท้องอืด
+                                        <span class="font-bold text-green-700">บำรุงกล้ามเนื้อ</span><br>ควรต้มหรือสับละเอียดเพื่อป้องกันท้องอืด
                                     </td>
                                 </tr>
                                 <tr class="hover:bg-gray-50 border-b border-gray-200">
                                     <td class="p-3">เนื้อวัว (ส่วนสันไม่ติดมัน)</td>
                                     <td class="p-3 text-center font-bold text-gray-800">100 กรัม</td>
                                     <td class="p-3 leading-relaxed">
-                                        <span class="font-bold text-dark">ระวังเนื้อเหนียวย่อยยาก</span><br>บำรุงเลือด ผู้สูงอายุควรทานแบบตุ๋นจนเปื่อย
+                                        <span class="font-bold text-red-600">ระวังเนื้อเหนียวย่อยยาก</span><br>บำรุงเลือด ผู้สูงอายุควรทานแบบตุ๋นจนเปื่อย
                                     </td>
                                 </tr>
                                 <tr class="hover:bg-gray-50 border-b border-gray-100">
@@ -496,28 +498,28 @@
                                     <td class="p-3 border-b border-gray-100">ทูน่ากระป๋อง</td>
                                     <td class="p-3 text-center font-bold text-gray-800 border-b border-gray-100">1 กระป๋อง <span class="text-[12px] font-normal text-gray-500">(เนื้อ ~100g)</span></td>
                                     <td class="p-3 leading-relaxed border-b border-gray-100">
-                                        <span class="font-bold text-dark">ระวังโซเดียมสูง</span><br>เนื้อนิ่มทานง่าย ควรเลือกสูตรน้ำแร่
+                                        <span class="font-bold text-red-600">ระวังโซเดียมสูง</span><br>เนื้อนิ่มทานง่าย ควรเลือกสูตรน้ำแร่
                                     </td>
                                 </tr>
                                 <tr class="hover:bg-gray-50 border-b border-gray-100">
                                     <td class="p-3 border-b border-gray-100">ปลาแซลมอน</td>
                                     <td class="p-3 text-center font-bold text-gray-800 border-b border-gray-100">100 กรัม</td>
                                     <td class="p-3 leading-relaxed border-b border-gray-100">
-                                        <span class="font-bold text-dark">ไขมันดีสูง</span><br>บำรุงสมองและข้อเข่า ควรนำไปต้มหรือนึ่ง
+                                        <span class="font-bold text-green-700">ไขมันดีสูง</span><br>บำรุงสมองและข้อเข่า ควรนำไปต้มหรือนึ่ง
                                     </td>
                                 </tr>
                                 <tr class="hover:bg-gray-50 border-b border-gray-100">
                                     <td class="p-3 border-b border-gray-100">ปลาดอลลี่ / ปลานิล</td>
                                     <td class="p-3 text-center font-bold text-gray-800 border-b border-gray-100">130 - 150 กรัม</td>
                                     <td class="p-3 leading-relaxed border-b border-gray-100">
-                                        <span class="font-bold text-dark">ระวังก้างปลา</span><br>เนื้อนุ่ม ย่อยง่าย ลื่นคอ
+                                        <span class="font-bold text-red-600">ระวังก้างปลา</span><br>เนื้อนุ่ม ย่อยง่าย ลื่นคอ
                                     </td>
                                 </tr>
                                 <tr class="hover:bg-gray-50 border-b border-gray-200">
                                     <td class="p-3">กุ้งขาว</td>
                                     <td class="p-3 text-center font-bold text-gray-800">120 - 150 กรัม</td>
                                     <td class="p-3 leading-relaxed">
-                                        <span class="font-bold text-dark">ระวังคอเลสเตอรอล</span><br>ควรเลี่ยงการทานมันกุ้งที่หัว
+                                        <span class="font-bold text-red-600">ระวังคอเลสเตอรอล</span><br>ควรเลี่ยงการทานมันกุ้งที่หัว
                                     </td>
                                 </tr>
                                 <tr class="hover:bg-gray-50 border-b border-gray-100">
@@ -525,28 +527,28 @@
                                     <td class="p-3 border-b border-gray-100">ไข่ไก่ (เบอร์ 1 หรือ 2)</td>
                                     <td class="p-3 text-center font-bold text-gray-800 border-b border-gray-100">3 - 4 ฟอง</td>
                                     <td class="p-3 leading-relaxed border-b border-gray-100">
-                                        โปรตีนสูง บำรุงสมอง แนะนำให้ทานเป็นไข่ต้มหรือไข่ตุ๋น
+                                        <span class="font-bold text-green-700">โปรตีนสูง บำรุงสมอง</span><br>แนะนำให้ทานเป็นไข่ต้มหรือไข่ตุ๋น
                                     </td>
                                 </tr>
                                 <tr class="hover:bg-gray-50 border-b border-gray-100">
                                     <td class="p-3 border-b border-gray-100">นมวัวรสจืด</td>
                                     <td class="p-3 text-center font-bold text-gray-800 border-b border-gray-100">600 ml <span class="text-[12px] font-normal text-gray-500">(~3 แก้ว)</span></td>
                                     <td class="p-3 leading-relaxed border-b border-gray-100">
-                                        <span class="font-bold text-dark">ระวังอาการท้องอืด</span><br>แคลเซียมสูง หากดื่มแล้วแพ้ควรเปลี่ยนเป็นนมถั่วเหลือง
+                                        <span class="font-bold text-red-600">ระวังอาการท้องอืด</span><br>แคลเซียมสูง หากดื่มแล้วแพ้ควรเปลี่ยนเป็นนมถั่วเหลือง
                                     </td>
                                 </tr>
                                 <tr class="hover:bg-gray-50 border-b border-gray-100">
                                     <td class="p-3 border-b border-gray-100">กรีกโยเกิร์ต</td>
                                     <td class="p-3 text-center font-bold text-gray-800 border-b border-gray-100">200 กรัม</td>
                                     <td class="p-3 leading-relaxed border-b border-gray-100">
-                                        ช่วยปรับสมดุลลำไส้ ควรเลือกรสธรรมชาติที่ไม่มีน้ำตาล
+                                        <span class="font-bold text-green-700">ช่วยปรับสมดุลลำไส้</span><br>ควรเลือกรสธรรมชาติที่ไม่มีน้ำตาล
                                     </td>
                                 </tr>
                                 <tr class="hover:bg-gray-50 border-b border-gray-200">
                                     <td class="p-3">เวย์โปรตีน</td>
                                     <td class="p-3 text-center font-bold text-gray-800">~1 สกู๊ป</td>
                                     <td class="p-3 leading-relaxed">
-                                        ดูดซึมไว เหมาะสำหรับผู้ที่มีปัญหาการเคี้ยวหรือทานเนื้อสัตว์ได้น้อย
+                                        <span class="font-bold text-green-700">ดูดซึมไว</span><br>เหมาะสำหรับผู้ที่มีปัญหาการเคี้ยวหรือทานเนื้อสัตว์ได้น้อย
                                     </td>
                                 </tr>
                                 <tr class="hover:bg-gray-50 border-b border-gray-100">
@@ -554,28 +556,28 @@
                                     <td class="p-3 border-b border-gray-100">เต้าหู้แข็ง (ขาว/เหลือง)</td>
                                     <td class="p-3 text-center font-bold text-gray-800 border-b border-gray-100">200 - 250 กรัม <span class="text-[12px] font-normal text-gray-500">(~1 ก้อนครึ่ง)</span></td>
                                     <td class="p-3 leading-relaxed border-b border-gray-100">
-                                        โปรตีนจากพืช ไม่มีคอเลสเตอรอล ทานแล้วไม่อืดท้อง
+                                        <span class="font-bold text-green-700">โปรตีนจากพืช ไม่มีคอเลสเตอรอล</span><br>ทานแล้วไม่อืดท้อง
                                     </td>
                                 </tr>
                                 <tr class="hover:bg-gray-50 border-b border-gray-100">
                                     <td class="p-3 border-b border-gray-100">เต้าหู้คินุ (อ่อนญี่ปุ่น)</td>
                                     <td class="p-3 text-center font-bold text-gray-800 border-b border-gray-100">300 - 400 กรัม</td>
                                     <td class="p-3 leading-relaxed border-b border-gray-100">
-                                        เนื้อนิ่มมาก แทบไม่ต้องเคี้ยว เหมาะกับผู้ที่มีปัญหาการกลืน
+                                        <span class="font-bold text-green-700">เนื้อนิ่มมาก แทบไม่ต้องเคี้ยว</span><br>เหมาะกับผู้ที่มีปัญหาการกลืน
                                     </td>
                                 </tr>
                                 <tr class="hover:bg-gray-50 border-b border-gray-100">
                                     <td class="p-3 border-b border-gray-100">นมถั่วเหลือง</td>
                                     <td class="p-3 text-center font-bold text-gray-800 border-b border-gray-100">600 ml</td>
                                     <td class="p-3 leading-relaxed border-b border-gray-100">
-                                        ย่อยง่ายกว่านมวัว ควรเลือกสูตรจืดหรือหวานน้อยเพื่อคุมน้ำตาล
+                                        <span class="font-bold text-green-700">ย่อยง่ายกว่านมวัว</span><br>ควรเลือกสูตรจืดหรือหวานน้อยเพื่อคุมน้ำตาล
                                     </td>
                                 </tr>
                                 <tr class="hover:bg-gray-50">
                                     <td class="p-3">ถั่วแระญี่ปุ่น (Edamame)</td>
                                     <td class="p-3 text-center font-bold text-gray-800">180 - 200 กรัม <span class="text-[12px] font-normal text-gray-500">(เฉพาะเม็ด)</span></td>
                                     <td class="p-3 leading-relaxed">
-                                        กากใยสูงช่วยขับถ่าย ควรต้มให้นิ่มและเคี้ยวให้ละเอียด
+                                        <span class="font-bold text-red-600">ระวังติดคอ</span><br>กากใยสูงช่วยขับถ่าย ควรต้มให้นิ่มและเคี้ยวให้ละเอียด
                                     </td>
                                 </tr>
                             </tbody>
@@ -589,7 +591,7 @@
         <div id="tab-3" class="tab-content">
             <div class="p-5 md:p-8 space-y-6">
                 
-                <div id="tab3-protein-summary" class="hidden bg-gray-100 rounded-xl p-4 shadow-sm border border-gray-200">
+                <div id="tab3-protein-summary" class="hidden bg-gray-50 rounded-xl p-4 shadow-sm border border-gray-200">
                     <div class="flex items-start md:items-center gap-3">
                         <div class="bg-white p-2 rounded-lg text-gray-600 shrink-0 border border-gray-200">
                             <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -603,10 +605,10 @@
                     </div>
                 </div>
 
-                <div class="bg-white rounded-xl shadow-sm border border-gray-300 overflow-hidden">
-                    <div class="bg-gray-100 p-4 text-gray-800 border-b border-gray-200">
+                <div class="bg-white rounded-xl shadow-sm border border-green-600 overflow-hidden">
+                    <div class="bg-green-600 p-4 text-white">
                         <h2 class="text-lg md:text-xl font-bold flex items-center gap-2">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-gray-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z" />
                             </svg>
                             เครื่องมือคำนวณอาหารเสริมทางการแพทย์
@@ -616,13 +618,13 @@
                     <div class="p-5 md:p-6 space-y-6">
                         <div>
                             <label class="block font-semibold mb-2 text-dark text-[16px]">เลือกผลิตภัณฑ์ที่ต้องการทาน</label>
-                            <select id="sup-select" onchange="updateSupplementUI()" class="w-full bg-gray-50 border border-gray-300 rounded-xl p-3 outline-none focus:border-gray-500 focus:ring-1 focus:ring-gray-500 text-[15px] font-medium cursor-pointer">
+                            <select id="sup-select" onchange="updateSupplementUI()" class="w-full bg-gray-50 border border-gray-300 rounded-xl p-3 outline-none focus:border-green-600 focus:ring-1 focus:ring-green-600 text-[15px] font-medium cursor-pointer">
                                 </select>
                         </div>
 
                         <div id="sup-display-area" class="hidden">
                             <div class="flex flex-col sm:flex-row gap-5 items-center sm:items-start bg-gray-50 p-4 rounded-xl border border-gray-200">
-                                <img id="sup-image" src="" alt="Supplement Image" class="w-32 h-32 md:w-40 md:h-40 object-contain rounded-lg border border-gray-300 shadow-sm bg-white shrink-0">
+                                <img id="sup-image" src="" alt="Supplement Image" class="w-[150px] h-[150px] object-contain rounded-lg border border-gray-300 shadow-sm bg-white shrink-0">
                                 
                                 <div class="w-full text-center sm:text-left">
                                     <h3 id="sup-name" class="text-xl font-bold text-dark mb-1">Name</h3>
@@ -800,7 +802,7 @@
                             <td class="p-2 text-center text-gray-600">${item.amount} ${item.unit}</td>
                             <td class="p-2 text-center font-bold text-gray-800">${item.protein.toFixed(1)}</td>
                             <td class="p-2 text-center">
-                                <button onclick="removeMealItem(${index})" class="text-red-500 hover:text-red-700 font-bold px-2 py-1 rounded hover:bg-red-50 transition">X</button>
+                                <button onclick="removeMealItem(${index})" class="text-gray-500 hover:text-red-600 font-bold px-2 py-1 rounded hover:bg-gray-100 transition">X</button>
                             </td>
                         </tr>
                     `;
@@ -845,7 +847,7 @@
                     <tr class="border-b border-gray-100 hover:bg-gray-50">
                         <td class="p-3">
                             <div class="flex items-center gap-4">
-                                <img src="${data.img}" alt="${data.name}" class="w-24 h-24 object-contain rounded-lg border border-gray-200 bg-white shadow-sm shrink-0" onerror="this.onerror=null; this.src='https://placehold.co/100x100/e2e8f0/64748b?text=Image';">
+                                <img src="${data.img}" alt="${data.name}" class="w-[150px] h-[150px] object-contain rounded-lg border border-gray-200 bg-white shadow-sm shrink-0" onerror="this.onerror=null; this.src='https://placehold.co/150x150/e2e8f0/64748b?text=Image';">
                                 <div>
                                     <span class="font-bold text-[16px] text-dark block">${data.name}</span>
                                     <span class="text-[14px] text-gray-500 block mt-1">${data.desc}</span>
@@ -854,7 +856,7 @@
                         </td>
                         <td class="p-3 text-center">
                             <span class="text-gray-800 font-bold text-[18px]">${data.pPerScoop.toFixed(2)} กรัม</span><br>
-                            <span class="text-[13px] text-gray-500 font-normal">(ต่อ 1 ${data.u2})</span>
+                            <span class="text-[13px] text-gray-500 font-normal">(โปรตีนต่อ 1 ${data.u2})</span>
                         </td>
                     </tr>
                 `;
@@ -881,7 +883,7 @@
             imgEl.src = data.img;
             imgEl.onerror = function() {
                 this.onerror = null;
-                this.src = `https://placehold.co/200x200/e2e8f0/64748b?text=${id}`;
+                this.src = `https://placehold.co/150x150/e2e8f0/64748b?text=${id}`;
             };
 
             // อัปเดตหน่วย (ช้อนตวง/กระป๋อง/เม็ด) ทุกจุดใน UI
