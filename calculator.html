@@ -1127,9 +1127,9 @@ let minProtein = 0; let maxProtein = 0;
                     `;
 
                 } else {
-                    let minPercent = 0.10; let maxPercent = 0.35;
+let minPercent = 0.10; let maxPercent = 0.35;
                     let adjustedAge = Math.max(age, 2);
-                    let targetRef = ""; // เก็บอ้างอิงเฉพาะช่วงอายุ
+                    let targetRef = ""; 
                     
                     userSpecificText = `<p class="font-bold text-blue-700">เกณฑ์ที่ใช้คำนวณของคุณ: กลุ่มบุคคลทั่วไป/สุขภาพดี (สัดส่วนพลังงาน AMDR)</p>`;
                     
@@ -1177,6 +1177,29 @@ let minProtein = 0; let maxProtein = 0;
                         ${refDetails}
                     </div>
                 `;
+
+                document.getElementById('res-bmi-value').innerText = bmi.toFixed(1);
+                document.getElementById('res-bmi-text').innerText = bmiCategory;
+                document.getElementById('res-bmi-text').className = `text-[16px] font-medium mt-1 ${bmiColor}`;
+                document.getElementById('res-calories').innerText = targetCalories.toLocaleString('th-TH');
+                
+                const finalProteinStr = `${Math.round(minProtein)} - ${Math.round(maxProtein)}`;
+                document.getElementById('res-protein').innerText = finalProteinStr;
+                
+                document.getElementById('res-protein-detail').innerHTML = referenceHTML;
+                
+                document.getElementById('tab3-target-protein').innerText = finalProteinStr;
+                document.getElementById('tab3-protein-summary').classList.remove('hidden');
+
+                const resultSection = document.getElementById('result-section');
+                resultSection.style.display = 'block';
+                setTimeout(() => resultSection.scrollIntoView({ behavior: 'smooth', block: 'start' }), 100);
+
+            } catch (error) {
+                console.error("Calculation Error:", error);
+                alert("เกิดข้อผิดพลาดในการคำนวณ โปรดตรวจสอบข้อมูลอีกครั้งครับ");
+            }
+        }
        // Initialize
         document.addEventListener('DOMContentLoaded', () => {
             updateUnits();
