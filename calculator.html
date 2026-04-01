@@ -1038,11 +1038,8 @@ function calculate() {
     }
 }
 
-// ==========================================
-// Event Listeners (เมื่อโหลดหน้าเว็บ)
-// ==========================================
-document.addEventListener('DOMContentLoaded', () => {
-    updateUnits();
-    
-    // ผูก event เพิ่มเติมได้ที่นี่ถ้าต้องการแบบไม่ใช้ onclick ใน HTML
-});
+        // ตั้งค่าหน่วยตั้งต้นเมื่อโหลดหน้าเว็บครั้งแรก
+        document.addEventListener('DOMContentLoaded', updateUnits);
+    </script>
+</body>
+</html>
