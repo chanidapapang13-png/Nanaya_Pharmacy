@@ -850,7 +850,7 @@ function calculate() {
         const activity = parseFloat(activityText);
         const goal = parseInt(goalText);
 
-        // ดึงค่าจาก Checkbox สภาวะโรค (ใส่ ? ป้องกัน Error หากหา Element ไม่เจอ)
+        // ดึงค่าจาก Checkbox สภาวะโรค (ใส่ ? ป้องกัน Error)
         const isPregnant = document.getElementById('chk_pregnant')?.checked || false;
         const isSarcopenia = document.getElementById('chk_sarcopenia')?.checked || false;
         const isMalnutrition = document.getElementById('chk_malnutrition')?.checked || false;
@@ -916,14 +916,14 @@ function calculate() {
                 references.push("<b>ผู้สูงอายุสุขภาพดี (>65 ปี):</b> แนะนำโปรตีน 1.0-1.2 กรัม/กก./วัน เพื่อรักษามวลกล้ามเนื้อและป้องกันการเสื่อมถอย <br><span class='text-gray-500 text-xs'>(อ้างอิง: Heo S, Yang SJ. Korean J Community Nutr. 2025)</span>");
             } else {
                 protMin = 0.8; protMax = 1.0;
-                references.push("<b>บุคคลทั่วไป (วัยผู้ใหญ่):</b> แนะนำโปรตีน 0.8-1.0 กรัม/กก./วัน (หรือ 10-35% ของพลังงานรวม) <br><span class='text-gray-500 text-xs'>(อ้างอิง: U.S. Dept of Agriculture. Dietary Guidelines 2020-2025)</span>");
+                references.push("<b>บุคคลทั่วไป (วัยผู้ใหญ่):</b> แนะนำโปรตีน 0.8-1.0 กรัม/กก./วัน <br><span class='text-gray-500 text-xs'>(อ้างอิง: U.S. Dept of Agriculture. Dietary Guidelines 2020-2025)</span>");
             }
         } else {
             let minArr = []; let maxArr = [];
 
             if (isPregnant) {
                 minArr.push(1.1); maxArr.push(1.5);
-                references.push("<b>ผู้ตั้งครรภ์:</b> แนะนำที่ 10-35% ของพลังงานรวมต่อวัน เพื่อเสริมสร้างการเจริญเติบโตของทารก <br><span class='text-gray-500 text-xs'>(อ้างอิง: U.S. Dept of Agriculture. Dietary Guidelines 2020-2025)</span>");
+                references.push("<b>ผู้ตั้งครรภ์:</b> แนะนำที่ 10-35% ของพลังงานรวมต่อวัน <br><span class='text-gray-500 text-xs'>(อ้างอิง: U.S. Dept of Agriculture. Dietary Guidelines 2020-2025)</span>");
             }
             if (isSarcopenia) {
                 minArr.push(1.2); maxArr.push(1.5);
@@ -931,23 +931,23 @@ function calculate() {
             }
             if (isMalnutrition) {
                 minArr.push(1.2); maxArr.push(1.5);
-                references.push("<b>ผู้เสี่ยงขาดสารอาหาร:</b> ควรได้รับโปรตีน 1.2 - 1.5 กรัม/กก./วัน เพื่อฟื้นฟูร่างกายและต้านภาวะการสลายโปรตีน <br><span class='text-gray-500 text-xs'>(อ้างอิง: ESPEN guideline on clinical nutrition 2025)</span>");
+                references.push("<b>ผู้เสี่ยงขาดสารอาหาร:</b> ควรได้รับโปรตีน 1.2 - 1.5 กรัม/กก./วัน เพื่อฟื้นฟูร่างกาย <br><span class='text-gray-500 text-xs'>(อ้างอิง: ESPEN guideline on clinical nutrition 2025)</span>");
             }
             if (isSurgery) {
                 minArr.push(1.2); maxArr.push(1.5);
-                references.push("<b>ผู้ป่วยผ่าตัด (Surgery):</b> ควรได้รับโปรตีน 1.2 - 1.5 กรัม/กก./วัน เพื่อต้านภาวะการสลายโปรตีนในร่างกาย (Catabolism) <br><span class='text-gray-500 text-xs'>(อ้างอิง: Weimann A, et al. ESPEN guideline on clinical nutrition in surgery. Clin Nutr. 2025)</span>");
+                references.push("<b>ผู้ป่วยผ่าตัด (Surgery):</b> ควรได้รับโปรตีน 1.2 - 1.5 กรัม/กก./วัน เพื่อต้านภาวะการสลายโปรตีนในร่างกาย <br><span class='text-gray-500 text-xs'>(อ้างอิง: Weimann A, et al. Clin Nutr. 2025)</span>");
             }
             if (isCancer) {
                 minArr.push(1.0); maxArr.push(1.5);
-                references.push("<b>ผู้ป่วยโรคมะเร็ง (Cancer):</b> แนะนำให้ได้รับโปรตีนอย่างน้อย 1.0 กรัม/กก./วัน และควรเพิ่มเป้าหมายไปถึง 1.5 กรัม/กก./วัน เนื่องจากร่างกายมีความต้องการกรดอะมิโนสูงขึ้น <br><span class='text-gray-500 text-xs'>(อ้างอิง: Muscaritoli M, et al. ESPEN practical guideline. Clin Nutr. 2021)</span>");
+                references.push("<b>ผู้ป่วยโรคมะเร็ง (Cancer):</b> แนะนำให้ได้รับโปรตีน 1.0 - 1.5 กรัม/กก./วัน เนื่องจากร่างกายต้องการกรดอะมิโนสูงขึ้น <br><span class='text-gray-500 text-xs'>(อ้างอิง: Muscaritoli M, et al. Clin Nutr. 2021)</span>");
             }
             if (isCirrhosis) {
                 minArr.push(1.2); maxArr.push(1.5);
-                references.push("<b>ผู้ป่วยโรคตับแข็ง:</b> ควรได้รับโปรตีนอย่างน้อย 1.2 - 1.5 กรัม/กก./วัน เพื่อชดเชยการสูญเสียมวลกล้ามเนื้อและป้องกันภาวะขาดสารอาหาร <br><span class='text-gray-500 text-xs'>(อ้างอิง: แนวทางเวชปฏิบัติการดูแลรักษาผู้ป่วยโรคตับแข็ง ในประเทศไทย พ.ศ. 2568 - THASL)</span>");
+                references.push("<b>ผู้ป่วยโรคตับแข็ง:</b> ควรได้รับโปรตีนอย่างน้อย 1.2 - 1.5 กรัม/กก./วัน <br><span class='text-gray-500 text-xs'>(อ้างอิง: แนวทางเวชปฏิบัติการดูแลรักษาผู้ป่วยโรคตับแข็ง ในประเทศไทย พ.ศ. 2568 - THASL)</span>");
             }
             if (isDiabetes) {
                 minArr.push(0.8); maxArr.push(1.5);
-                references.push("<b>ผู้ป่วยโรคเบาหวาน (Diabetes):</b> แนะนำ 0.8 - 1.5 กรัม/กก./วัน หากมีความเสี่ยงน้ำตาลแกว่งแนะนำระดับที่สูงขึ้นเพื่อชะลอการดูดซึมน้ำตาล <br><span class='text-gray-500 text-xs'>(อ้างอิง: ADA Standards of Care 2026 / Scoping Review DKD)</span>");
+                references.push("<b>ผู้ป่วยโรคเบาหวาน (Diabetes):</b> แนะนำ 0.8 - 1.5 กรัม/กก./วัน เพื่อชะลอการดูดซึมน้ำตาล <br><span class='text-gray-500 text-xs'>(อ้างอิง: ADA Standards of Care 2026 / Scoping Review DKD)</span>");
             }
 
             // กลุ่มโรคไต
@@ -956,12 +956,12 @@ function calculate() {
                 references.push("<b>ผู้ป่วยไตเรื้อรังระยะเริ่มต้น (CKD 1-2):</b> ไม่แนะนำให้จำกัดโปรตีนให้น้อยกว่า 0.8 กรัม/กก./วัน <br><span class='text-gray-500 text-xs'>(อ้างอิง: SEMDSA, SIGN 2017)</span>");
             }
             if (isDkdNon) {
-                minArr = [0.6]; maxArr = [0.8]; // จำกัดโปรตีนสูงสุด
+                minArr = [0.6]; maxArr = [0.8]; // บังคับ Override ค่าสูงสุด
                 references.push("<b>ผู้ป่วยไตเรื้อรังระยะก่อนฟอกไต (CKD 3-5):</b> จำกัดสูงสุดที่ 0.8 กรัม/กก./วัน (แนะนำที่ 0.6 - 0.8) <br><span class='text-gray-500 text-xs'>(อ้างอิง: KDOQI 2020 / ADA / KDIGO)</span>");
             }
             if (isDkdDialysis) {
                 minArr.push(1.0); maxArr.push(1.2);
-                references.push("<b>ผู้ป่วยโรคไตระยะฟอกไต (Dialysis / CKD 5D):</b> ต้องเพิ่มปริมาณโปรตีนเป็น 1.0 - 1.2 กรัม/กก./วัน เพื่อชดเชยโปรตีนที่สูญเสียไป <br><span class='text-gray-500 text-xs'>(อ้างอิง: KDOQI 2020)</span>");
+                references.push("<b>ผู้ป่วยโรคไตระยะฟอกไต (Dialysis / CKD 5D):</b> ต้องเพิ่มปริมาณโปรตีนเป็น 1.0 - 1.2 กรัม/กก./วัน เพื่อชดเชยที่สูญเสียไป <br><span class='text-gray-500 text-xs'>(อ้างอิง: KDOQI 2020)</span>");
             }
 
             // คำนวณหาค่าที่ปลอดภัยที่สุดหากมีหลายโรค
