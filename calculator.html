@@ -265,12 +265,10 @@
         </div>
     </div>
                 
-                <div id="tab-2" class="tab-content w-full"> 
-    <div class="max-w-7xl mx-auto p-5 md:p-8 space-y-12"> 
-        
+    <div id="tab-2" class="tab-content w-full"> 
+            <div class="p-5 md:p-8 space-y-12">
         <section class="w-full">
             <h2 class="text-xl font-bold text-gray-800 mb-4 border-l-4 border-gray-400 pl-3">ตารางอ้างอิง: ปริมาณเพื่อให้ได้โปรตีน ~20 กรัม</h2>
-
                     <div class="bg-blue-50 border border-blue-200 rounded-xl p-4 mb-4 text-gray-800 text-[15px]">
                         <p>💡 <strong>ทริคกะปริมาณ:</strong> อาหารในตารางด้านล่างนี้ ให้ปริมาณโปรตีนเทียบเท่ากับ <span class="bg-blue-200 px-2 py-0.5 rounded font-bold text-primary">20 กรัม</span> เพื่อให้คุณนำไปกะปริมาณด้วยสายตาได้ง่ายขึ้น (น้ำหนักคืออาหารที่ปรุงสุกแล้ว)</p>
                     </div>
@@ -339,12 +337,11 @@
                 </div>
         </section>
 
-                <hr class="border-gray-200">
+        <hr class="border-gray-200">
 
-                <section class="w-full">
-                    <h2 class="text-xl font-bold text-gray-800 mb-4 border-l-4 border-secondary pl-3">ไอเดียเมนูอาหารโปรตีนสูง</h2>
-                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                        
+        <section class="w-full">
+                <h2 class="text-xl font-bold text-gray-800 mb-4 border-l-4 border-secondary pl-3">ไอเดียเมนูอาหารโปรตีนสูง</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                         <div class="bg-white p-4 rounded-xl border border-gray-200 shadow-sm hover:shadow-md transition">
                             <div class="flex justify-between items-start mb-2">
                                 <h3 class="font-bold text-[17px] text-dark">🍛 ข้าวผัดหมูสับ + ไข่ดาว</h3>
@@ -402,7 +399,8 @@
                                 <span class="font-bold text-lg text-primary">30 กรัม</span>
                              </div> 
                         </div> 
-                </section> 
+                    </div> 
+            </section> 
         <hr class="border-gray-200">
 
                     </div>
@@ -410,7 +408,7 @@
 
                 <hr class="border-gray-200">
 
-                <div class="bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden">
+<div class="bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden text-left">
                     <div class="bg-indigo-50 border-b border-indigo-100 p-4">
                         <h2 class="text-xl font-bold text-indigo-900 flex items-center gap-2">
                             <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-indigo-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -471,10 +469,8 @@
                         </div>
                     </div>
                 </div>
-</section>
-                    
-        </div>
             </div>
+
         <div id="tab-3" class="tab-content">
             <div class="p-5 md:p-8">
                 
@@ -684,12 +680,15 @@
                                     </div>
                                     <div class="text-[13px] text-gray-700 mt-2 bg-white p-2 rounded border border-gray-100 shadow-sm">
                                         ➔ ได้รับโปรตีน <span id="neo-res-protein" class="font-bold text-secondary text-[16px]">0</span> กรัม
-                                    </div>
-                                </td>
+                                    </td>
                             </tr>
-</tbody>
+                            </tbody>
                     </table>
-                </div> </div> </div> </div> <script>
+                </div>
+            </div>
+        </div>
+    </div> 
+    <script>
         // === ฟังก์ชันสลับแท็บ ===
         function switchTab(tabId, btnElement) {
             document.querySelectorAll('.tab-content').forEach(tab => {
