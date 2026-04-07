@@ -470,10 +470,10 @@
             </section>
         </div> 
 </div> 
-    <div id="tab-3" class="tab-content w-full">
+<div id="tab-3" class="tab-content w-full">
             <div class="p-5 md:p-8 space-y-8">
                 
-                <div id="tab3-protein-summary" class="hidden mb-6 bg-green-50 border border-green-200 rounded-xl p-4 shadow-sm">
+                <div id="tab3-protein-summary" class="hidden bg-green-50 border border-green-200 rounded-xl p-4 shadow-sm text-left">
                     <div class="flex items-start md:items-center gap-3">
                         <div class="bg-green-100 p-2 rounded-lg text-green-600 shrink-0">
                             <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -482,213 +482,191 @@
                         </div>
                         <div>
                             <p class="text-[16px] text-gray-800 font-medium">เป้าหมายโปรตีนต่อวันของคุณคือ: <span id="tab3-target-protein" class="text-xl font-bold text-secondary ml-1">0 - 0</span> <span class="text-gray-600 font-normal">กรัม/วัน</span></p>
-                            <p class="text-[13px] text-gray-500 mt-1">สามารถนำเป้าหมายนี้มากรอกในช่อง "ต้องการโปรตีน" ด้านล่าง เพื่อคำนวณปริมาณที่ต้องชงได้เลยครับ</p>
+                            <p class="text-[13px] text-gray-500 mt-1">นำเป้าหมายนี้มากรอกในช่อง "ต้องการโปรตีน" ด้านล่างเพื่อคำนวณปริมาณที่ต้องชงได้เลยครับ</p>
                         </div>
                     </div>
                 </div>
 
-                <div class="flex items-center justify-between mb-4 border-l-4 border-primary pl-3">
-                    <h2 class="text-xl font-bold text-gray-800">ตารางคำนวณอาหารเสริม</h2>
-                </div>
-                
-                <div class="overflow-x-auto rounded-xl border border-gray-200 shadow-sm">
-                    <table class="w-full text-left border-collapse min-w-[800px]">
-                        <thead>
-                            <tr class="bg-primary text-white text-[16px]">
-                                <th class="p-4 border-b border-r border-blue-600 w-[25%]">ผลิตภัณฑ์</th>
-                                <th class="p-4 border-b border-r border-blue-600 text-center w-[15%]">โปรตีนที่ได้<br>(ต่อ 1 ช้อนตวง)</th>
-                                <th class="p-4 border-b border-r border-blue-600 w-[30%]">คำนวณหาปริมาณที่ต้องกิน<br><span class="text-sm font-normal text-blue-200">(ต้องการโปรตีน → ต้องกินกี่ช้อน)</span></th>
-                                <th class="p-4 border-b w-[30%]">คำนวณโปรตีนที่จะได้รับ<br><span class="text-sm font-normal text-blue-200">(กินกี่ช้อน → ได้โปรตีนเท่าไหร่)</span></th>
-                            </tr>
-                        </thead>
-                        <tbody class="text-[15px] text-gray-800 bg-white">
+                <div class="bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden text-left">
+                    <div class="bg-primary border-b border-blue-700 p-4">
+                        <h2 class="text-xl font-bold text-white flex items-center gap-2">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z" />
+                            </svg>
+                            เครื่องคำนวณอาหารเสริมทางการแพทย์
+                        </h2>
+                    </div>
+                    
+                    <div class="p-5 flex flex-col md:flex-row gap-8 items-center md:items-start">
+                        
+                        <div class="w-full md:w-1/3 flex flex-col items-center space-y-4 bg-gray-50 p-4 rounded-xl border border-gray-100">
+                            <label class="font-bold text-gray-700 self-start">เลือกผลิตภัณฑ์:</label>
+                            <select id="supp-select" onchange="updateSupplementUI()" class="w-full p-3 bg-white border border-gray-300 rounded-lg outline-none focus:ring-2 focus:ring-primary font-medium text-gray-800 shadow-sm cursor-pointer">
+                                <option value="gluco">GlucoMeal</option>
+                                <option value="bgc">BOOST GLUCOSE CONTROL</option>
+                                <option value="bop">BOOST OPTIMUM (มีโพรไบโอติก)</option>
+                                <option value="bol">BOOST OPTIMUM (ผสมแล็กโทบาซิลลัส)</option>
+                                <option value="neo">NEO-MUNE</option>
+                                <option value="albu_q">AlbuQuik (ไข่ขาวผง)</option>
+                                <option value="albu_t">AlbuTab (ไข่ขาวอัดเม็ด)</option>
+                                <option value="amino">Aminoleban (สูตรโรคตับ)</option>
+                                <option value="immuplex">Immuplex (เวย์โปรตีนไอโซเลท)</option>
+                                <option value="kalg">Kal-G (คอลลาเจน)</option>
+                                <option value="nepro">Nepro LP (สูตรโรคไต)</option>
+                                <option value="once">ONCE</option>
+                                <option value="peptamen">Peptamen</option>
+                                <option value="prosure">Prosure (สูตรโรคมะเร็ง)</option>
+                            </select>
                             
-                            <tr class="hover:bg-gray-50 border-b">
-                                <td class="p-4 border-r border-gray-200">
-                                    <div class="flex items-center gap-3">
-                                        <img src="GlucoMeal400g.JPG" alt="GlucoMeal" class="w-16 h-16 md:w-20 md:h-20 object-contain rounded-lg border border-gray-200 shadow-sm bg-white shrink-0" onerror="this.onerror=null; this.src='https://placehold.co/100x100/e2e8f0/64748b?text=GlucoMeal';">
-                                        <div>
-                                            <div class="font-bold text-dark text-[15px]">GlucoMeal</div>
-                                            <div class="text-[12px] font-normal text-gray-500 mt-1">1 ช้อน = 25 กรัม</div>
-                                        </div>
-                                    </div>
-                                </td>
-                                <td class="p-4 text-center border-r border-gray-200">
-                                    <span class="font-bold text-secondary text-[18px]">4.50</span> กรัม
-                                </td>
-                                <td class="p-4 border-r border-gray-200 bg-blue-50/50">
-                                    <div class="flex items-center gap-2 mb-2">
-                                        <span class="font-medium text-sm">ต้องการโปรตีน</span>
-                                        <input type="number" id="gluco-req-protein" class="w-20 px-2 py-1 border border-gray-300 rounded focus:ring-1 focus:ring-primary outline-none text-center" placeholder="0" oninput="calcSupplement('gluco')">
-                                        <span class="font-medium text-sm">กรัม</span>
-                                    </div>
-                                    <div class="text-[13px] text-gray-700 mt-2 bg-white p-2 rounded border border-gray-100 shadow-sm">
-                                        ➔ ต้องกินผลิตภัณฑ์ <span id="gluco-res-grams" class="font-bold text-primary">0</span> กรัม <br>
-                                        <span class="text-gray-500">(เท่ากับตักประมาณ <span id="gluco-res-scoops" class="font-bold text-dark">0</span> ช้อนตวง)</span>
-                                    </div>
-                                </td>
-                                <td class="p-4 bg-green-50/50">
-                                    <div class="flex items-center gap-2 mb-2">
-                                        <span class="font-medium text-sm">ชงกิน</span>
-                                        <input type="number" id="gluco-use-scoops" class="w-20 px-2 py-1 border border-gray-300 rounded focus:ring-1 focus:ring-secondary outline-none text-center" placeholder="0" oninput="calcSupplement('gluco')">
-                                        <span class="font-medium text-sm">ช้อนตวง</span>
-                                    </div>
-                                    <div class="text-[13px] text-gray-700 mt-2 bg-white p-2 rounded border border-gray-100 shadow-sm">
-                                        ➔ ได้รับโปรตีน <span id="gluco-res-protein" class="font-bold text-secondary text-[16px]">0</span> กรัม
-                                    </div>
-                                </td>
-                            </tr>
+                            <div class="bg-white p-2 rounded-xl border border-gray-200 shadow-sm w-full flex justify-center h-48 items-center">
+                                <img id="supp-img" src="GlucoMeal400g.JPG" alt="Product Image" class="max-h-full max-w-full object-contain" onerror="this.onerror=null; this.src='https://placehold.co/150x150/e2e8f0/64748b?text=Image';">
+                            </div>
+                            
+                            <div id="supp-info" class="text-center text-gray-600 bg-white w-full p-3 rounded-lg border border-gray-200 shadow-sm text-[14px]">
+                                1 ช้อน = 25 กรัม <br>
+                                <span class="font-bold text-secondary text-[16px]">โปรตีน 4.50 กรัม</span>
+                            </div>
+                        </div>
 
-                            <tr class="hover:bg-gray-50 border-b">
-                                <td class="p-4 border-r border-gray-200">
-                                    <div class="flex items-center gap-3">
-                                        <img src="BoostGlucoseControl.JPG" alt="Boost Glucose Control" class="w-16 h-16 md:w-20 md:h-20 object-contain rounded-lg border border-gray-200 shadow-sm bg-white shrink-0" onerror="this.onerror=null; this.src='https://placehold.co/100x100/e2e8f0/64748b?text=BOOST+G.';">
-                                        <div>
-                                            <div class="font-bold text-dark text-[15px]">BOOST GLUCOSE CONTROL</div>
-                                            <div class="text-[12px] font-normal text-gray-500 mt-1">1 ช้อน ≈ 6.88 กรัม</div>
-                                        </div>
+                        <div class="w-full md:w-2/3 space-y-5">
+                            
+                            <div class="bg-blue-50/50 p-5 rounded-xl border border-blue-100 shadow-sm">
+                                <h3 class="font-bold text-gray-800 mb-3 border-b border-blue-200 pb-2">1. คำนวณหาปริมาณที่ต้องกิน</h3>
+                                <div class="flex flex-col sm:flex-row sm:items-center gap-3 mb-3">
+                                    <span class="font-medium text-gray-700">ระบุโปรตีนที่ต้องการ:</span>
+                                    <div class="flex items-center gap-2">
+                                        <input type="number" id="supp-req-input" class="w-24 p-2 border border-gray-300 rounded-lg outline-none focus:ring-2 focus:ring-primary text-center font-bold text-primary" placeholder="0" oninput="calcSupplementValues()">
+                                        <span class="text-gray-600">กรัม</span>
                                     </div>
-                                </td>
-                                <td class="p-4 text-center border-r border-gray-200">
-                                    <span class="font-bold text-secondary text-[18px]">1.41</span> กรัม
-                                </td>
-                                <td class="p-4 border-r border-gray-200 bg-blue-50/50">
-                                    <div class="flex items-center gap-2 mb-2">
-                                        <span class="font-medium text-sm">ต้องการโปรตีน</span>
-                                        <input type="number" id="bgc-req-protein" class="w-20 px-2 py-1 border border-gray-300 rounded focus:ring-1 focus:ring-primary outline-none text-center" placeholder="0" oninput="calcSupplement('bgc')">
-                                        <span class="font-medium text-sm">กรัม</span>
-                                    </div>
-                                    <div class="text-[13px] text-gray-700 mt-2 bg-white p-2 rounded border border-gray-100 shadow-sm">
-                                        ➔ ต้องกินผลิตภัณฑ์ <span id="bgc-res-grams" class="font-bold text-primary">0</span> กรัม <br>
-                                        <span class="text-gray-500">(เท่ากับตักประมาณ <span id="bgc-res-scoops" class="font-bold text-dark">0</span> ช้อนตวง)</span>
-                                    </div>
-                                </td>
-                                <td class="p-4 bg-green-50/50">
-                                    <div class="flex items-center gap-2 mb-2">
-                                        <span class="font-medium text-sm">ชงกิน</span>
-                                        <input type="number" id="bgc-use-scoops" class="w-20 px-2 py-1 border border-gray-300 rounded focus:ring-1 focus:ring-secondary outline-none text-center" placeholder="0" oninput="calcSupplement('bgc')">
-                                        <span class="font-medium text-sm">ช้อนตวง</span>
-                                    </div>
-                                    <div class="text-[13px] text-gray-700 mt-2 bg-white p-2 rounded border border-gray-100 shadow-sm">
-                                        ➔ ได้รับโปรตีน <span id="bgc-res-protein" class="font-bold text-secondary text-[16px]">0</span> กรัม
-                                    </div>
-                                </td>
-                            </tr>
+                                </div>
+                                <div class="bg-white p-3 rounded-lg border border-gray-200 text-[15px] text-gray-700 flex flex-col sm:flex-row sm:items-center gap-2">
+                                    <span>➔ ต้องใช้ผลิตภัณฑ์ <span id="supp-res-scoops" class="font-bold text-dark text-lg">0</span> ช้อนตวง</span>
+                                    <span class="text-gray-500 text-sm">(คิดเป็นน้ำหนักผง <span id="supp-res-grams" class="font-bold text-primary">0</span> กรัม)</span>
+                                </div>
+                            </div>
 
-                            <tr class="hover:bg-gray-50 border-b">
-                                <td class="p-4 border-r border-gray-200">
-                                    <div class="flex items-center gap-3">
-                                        <img src="BoostOptimumProbiotics.JPG" alt="Boost Optimum Probiotics" class="w-16 h-16 md:w-20 md:h-20 object-contain rounded-lg border border-gray-200 shadow-sm bg-white shrink-0" onerror="this.onerror=null; this.src='https://placehold.co/100x100/e2e8f0/64748b?text=BOOST+P.';">
-                                        <div>
-                                            <div class="font-bold text-dark text-[15px]">BOOST OPTIMUM<br><span class="font-normal text-sm">(มีโพรไบโอติก)</span></div>
-                                            <div class="text-[12px] font-normal text-gray-500 mt-1">1 ช้อน ≈ 7.86 กรัม</div>
-                                        </div>
+                            <div class="bg-green-50/50 p-5 rounded-xl border border-green-100 shadow-sm">
+                                <h3 class="font-bold text-gray-800 mb-3 border-b border-green-200 pb-2">2. คำนวณโปรตีนที่จะได้รับ</h3>
+                                <div class="flex flex-col sm:flex-row sm:items-center gap-3 mb-3">
+                                    <span class="font-medium text-gray-700">ระบุจำนวนช้อนที่ชงกิน:</span>
+                                    <div class="flex items-center gap-2">
+                                        <input type="number" id="supp-use-input" class="w-24 p-2 border border-gray-300 rounded-lg outline-none focus:ring-2 focus:ring-secondary text-center font-bold text-secondary" placeholder="0" oninput="calcSupplementValues()">
+                                        <span class="text-gray-600">ช้อนตวง</span>
                                     </div>
-                                </td>
-                                <td class="p-4 text-center border-r border-gray-200">
-                                    <span class="font-bold text-secondary text-[18px]">1.45</span> กรัม
-                                </td>
-                                <td class="p-4 border-r border-gray-200 bg-blue-50/50">
-                                    <div class="flex items-center gap-2 mb-2">
-                                        <span class="font-medium text-sm">ต้องการโปรตีน</span>
-                                        <input type="number" id="bop-req-protein" class="w-20 px-2 py-1 border border-gray-300 rounded focus:ring-1 focus:ring-primary outline-none text-center" placeholder="0" oninput="calcSupplement('bop')">
-                                        <span class="font-medium text-sm">กรัม</span>
-                                    </div>
-                                    <div class="text-[13px] text-gray-700 mt-2 bg-white p-2 rounded border border-gray-100 shadow-sm">
-                                        ➔ ต้องกินผลิตภัณฑ์ <span id="bop-res-grams" class="font-bold text-primary">0</span> กรัม <br>
-                                        <span class="text-gray-500">(เท่ากับตักประมาณ <span id="bop-res-scoops" class="font-bold text-dark">0</span> ช้อนตวง)</span>
-                                    </div>
-                                </td>
-                                <td class="p-4 bg-green-50/50">
-                                    <div class="flex items-center gap-2 mb-2">
-                                        <span class="font-medium text-sm">ชงกิน</span>
-                                        <input type="number" id="bop-use-scoops" class="w-20 px-2 py-1 border border-gray-300 rounded focus:ring-1 focus:ring-secondary outline-none text-center" placeholder="0" oninput="calcSupplement('bop')">
-                                        <span class="font-medium text-sm">ช้อนตวง</span>
-                                    </div>
-                                    <div class="text-[13px] text-gray-700 mt-2 bg-white p-2 rounded border border-gray-100 shadow-sm">
-                                        ➔ ได้รับโปรตีน <span id="bop-res-protein" class="font-bold text-secondary text-[16px]">0</span> กรัม
-                                    </div>
-                                </td>
-                            </tr>
+                                </div>
+                                <div class="bg-white p-3 rounded-lg border border-gray-200 text-[15px] text-gray-700">
+                                    ➔ ร่างกายจะได้รับโปรตีน <span id="supp-res-protein" class="font-bold text-secondary text-xl">0</span> กรัม
+                                </div>
+                            </div>
 
-                            <tr class="hover:bg-gray-50 border-b">
-                                <td class="p-4 border-r border-gray-200">
-                                    <div class="flex items-center gap-3">
-                                        <img src="BoostOptimumLactoba.JPG" alt="Boost Optimum Lactoba" class="w-16 h-16 md:w-20 md:h-20 object-contain rounded-lg border border-gray-200 shadow-sm bg-white shrink-0" onerror="this.onerror=null; this.src='https://placehold.co/100x100/e2e8f0/64748b?text=BOOST+L.';">
-                                        <div>
-                                            <div class="font-bold text-dark text-[15px]">BOOST OPTIMUM<br><span class="font-normal text-sm">(ผสมแล็กโทบาซิลลัส)</span></div>
-                                            <div class="text-[12px] font-normal text-gray-500 mt-1">1 ช้อน ≈ 7.86 กรัม</div>
-                                        </div>
-                                    </div>
-                                </td>
-                                <td class="p-4 text-center border-r border-gray-200">
-                                    <span class="font-bold text-secondary text-[18px]">1.45</span> กรัม
-                                </td>
-                                <td class="p-4 border-r border-gray-200 bg-blue-50/50">
-                                    <div class="flex items-center gap-2 mb-2">
-                                        <span class="font-medium text-sm">ต้องการโปรตีน</span>
-                                        <input type="number" id="bol-req-protein" class="w-20 px-2 py-1 border border-gray-300 rounded focus:ring-1 focus:ring-primary outline-none text-center" placeholder="0" oninput="calcSupplement('bol')">
-                                        <span class="font-medium text-sm">กรัม</span>
-                                    </div>
-                                    <div class="text-[13px] text-gray-700 mt-2 bg-white p-2 rounded border border-gray-100 shadow-sm">
-                                        ➔ ต้องกินผลิตภัณฑ์ <span id="bol-res-grams" class="font-bold text-primary">0</span> กรัม <br>
-                                        <span class="text-gray-500">(เท่ากับตักประมาณ <span id="bol-res-scoops" class="font-bold text-dark">0</span> ช้อนตวง)</span>
-                                    </div>
-                                </td>
-                                <td class="p-4 bg-green-50/50">
-                                    <div class="flex items-center gap-2 mb-2">
-                                        <span class="font-medium text-sm">ชงกิน</span>
-                                        <input type="number" id="bol-use-scoops" class="w-20 px-2 py-1 border border-gray-300 rounded focus:ring-1 focus:ring-secondary outline-none text-center" placeholder="0" oninput="calcSupplement('bol')">
-                                        <span class="font-medium text-sm">ช้อนตวง</span>
-                                    </div>
-                                    <div class="text-[13px] text-gray-700 mt-2 bg-white p-2 rounded border border-gray-100 shadow-sm">
-                                        ➔ ได้รับโปรตีน <span id="bol-res-protein" class="font-bold text-secondary text-[16px]">0</span> กรัม
-                                    </div>
-                                </td>
-                            </tr>
-
-                            <tr class="hover:bg-gray-50">
-                                <td class="p-4 border-r border-gray-200">
-                                    <div class="flex items-center gap-3">
-                                        <img src="Neomoon.JPG" alt="Neo-Mune" class="w-16 h-16 md:w-20 md:h-20 object-contain rounded-lg border border-gray-200 shadow-sm bg-white shrink-0" onerror="this.onerror=null; this.src='https://placehold.co/100x100/e2e8f0/64748b?text=NEO-MUNE';">
-                                        <div>
-                                            <div class="font-bold text-dark text-[15px]">NEO-MUNE</div>
-                                            <div class="text-[12px] font-normal text-gray-500 mt-1">1 ช้อน = 8.5 กรัม</div>
-                                        </div>
-                                    </div>
-                                </td>
-                                <td class="p-4 text-center border-r border-gray-200">
-                                    <span class="font-bold text-secondary text-[18px]">2.22</span> กรัม
-                                </td>
-                                <td class="p-4 border-r border-gray-200 bg-blue-50/50">
-                                    <div class="flex items-center gap-2 mb-2">
-                                        <span class="font-medium text-sm">ต้องการโปรตีน</span>
-                                        <input type="number" id="neo-req-protein" class="w-20 px-2 py-1 border border-gray-300 rounded focus:ring-1 focus:ring-primary outline-none text-center" placeholder="0" oninput="calcSupplement('neo')">
-                                        <span class="font-medium text-sm">กรัม</span>
-                                    </div>
-                                    <div class="text-[13px] text-gray-700 mt-2 bg-white p-2 rounded border border-gray-100 shadow-sm">
-                                        ➔ ต้องกินผลิตภัณฑ์ <span id="neo-res-grams" class="font-bold text-primary">0</span> กรัม <br>
-                                        <span class="text-gray-500">(เท่ากับตักประมาณ <span id="neo-res-scoops" class="font-bold text-dark">0</span> ช้อนตวง)</span>
-                                    </div>
-                                </td>
-                                <td class="p-4 bg-green-50/50">
-                                    <div class="flex items-center gap-2 mb-2">
-                                        <span class="font-medium text-sm">ชงกิน</span>
-                                        <input type="number" id="neo-use-scoops" class="w-20 px-2 py-1 border border-gray-300 rounded focus:ring-1 focus:ring-secondary outline-none text-center" placeholder="0" oninput="calcSupplement('neo')">
-                                        <span class="font-medium text-sm">ช้อนตวง</span>
-                                    </div>
-                                        <div class="text-[13px] text-gray-700 mt-2 bg-white p-2 rounded border border-gray-100 shadow-sm">
-                                        ➔ ได้รับโปรตีน <span id="neo-res-protein" class="font-bold text-secondary text-[16px]">0</span> กรัม
-                                    </div>
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
+                        </div>
+                    </div>
                 </div>
+
+                <div class="pt-6 text-left">
+                    <h2 class="text-xl font-bold text-gray-800 mb-4 border-l-4 border-gray-400 pl-3">ตารางอ้างอิงข้อมูลผลิตภัณฑ์</h2>
+                    <div class="overflow-x-auto rounded-xl border border-gray-200 shadow-sm">
+                        <table class="w-full text-left border-collapse min-w-[700px] bg-white">
+                            <thead>
+                                <tr class="bg-gray-100 text-gray-700 text-[15px]">
+                                    <th class="p-3 border-b text-center w-24">รูปภาพ</th>
+                                    <th class="p-3 border-b w-1/3">ชื่อผลิตภัณฑ์</th>
+                                    <th class="p-3 border-b text-center">ปริมาณน้ำหนัก<br>(ต่อ 1 ช้อนตวง / หน่วย)</th>
+                                    <th class="p-3 border-b text-center">โปรตีน<br>(ต่อ 1 ช้อนตวง / หน่วย)</th>
+                                </tr>
+                            </thead>
+                            <tbody class="text-[14px] text-gray-800">
+                                <tr class="hover:bg-gray-50 border-b">
+                                    <td class="p-3 border-r border-gray-100 text-center flex justify-center"><img src="GlucoMeal400g.JPG" alt="GlucoMeal" class="w-12 h-12 object-contain rounded border border-gray-200 bg-white"></td>
+                                    <td class="p-3 font-bold border-r border-gray-100">GlucoMeal</td>
+                                    <td class="p-3 text-center border-r border-gray-100">25 กรัม</td>
+                                    <td class="p-3 text-center font-bold text-secondary">4.50 กรัม</td>
+                                </tr>
+                                <tr class="hover:bg-gray-50 border-b">
+                                    <td class="p-3 border-r border-gray-100 text-center flex justify-center"><img src="BoostGlucoseControl.JPG" alt="Boost Glucose Control" class="w-12 h-12 object-contain rounded border border-gray-200 bg-white"></td>
+                                    <td class="p-3 font-bold border-r border-gray-100">BOOST GLUCOSE CONTROL</td>
+                                    <td class="p-3 text-center border-r border-gray-100">≈ 6.88 กรัม</td>
+                                    <td class="p-3 text-center font-bold text-secondary">1.41 กรัม</td>
+                                </tr>
+                                <tr class="hover:bg-gray-50 border-b">
+                                    <td class="p-3 border-r border-gray-100 text-center flex justify-center"><img src="BoostOptimumProbiotics.JPG" alt="Boost Optimum" class="w-12 h-12 object-contain rounded border border-gray-200 bg-white"></td>
+                                    <td class="p-3 font-bold border-r border-gray-100">BOOST OPTIMUM <span class="font-normal text-gray-500">(มีโพรไบโอติก)</span></td>
+                                    <td class="p-3 text-center border-r border-gray-100">≈ 7.86 กรัม</td>
+                                    <td class="p-3 text-center font-bold text-secondary">1.45 กรัม</td>
+                                </tr>
+                                <tr class="hover:bg-gray-50 border-b">
+                                    <td class="p-3 border-r border-gray-100 text-center flex justify-center"><img src="BoostOptimumLactoba.JPG" alt="Boost Optimum" class="w-12 h-12 object-contain rounded border border-gray-200 bg-white"></td>
+                                    <td class="p-3 font-bold border-r border-gray-100">BOOST OPTIMUM <span class="font-normal text-gray-500">(ผสมแล็กโทบาซิลลัส)</span></td>
+                                    <td class="p-3 text-center border-r border-gray-100">≈ 7.86 กรัม</td>
+                                    <td class="p-3 text-center font-bold text-secondary">1.45 กรัม</td>
+                                </tr>
+                                <tr class="hover:bg-gray-50 border-b">
+                                    <td class="p-3 border-r border-gray-100 text-center flex justify-center"><img src="Neomoon.JPG" alt="Neo-Mune" class="w-12 h-12 object-contain rounded border border-gray-200 bg-white"></td>
+                                    <td class="p-3 font-bold border-r border-gray-100">NEO-MUNE</td>
+                                    <td class="p-3 text-center border-r border-gray-100">8.5 กรัม</td>
+                                    <td class="p-3 text-center font-bold text-secondary">2.22 กรัม</td>
+                                </tr>
+                                <tr class="hover:bg-gray-50 border-b">
+                                    <td class="p-3 border-r border-gray-100 text-center flex justify-center"><img src="AlbuQuik.jpg" alt="AlbuQuik" class="w-12 h-12 object-contain rounded border border-gray-200 bg-white"></td>
+                                    <td class="p-3 font-bold border-r border-gray-100">AlbuQuik (ไข่ขาวผง)</td>
+                                    <td class="p-3 text-center border-r border-gray-100">4.0 กรัม (1 ช้อนโต๊ะ)</td>
+                                    <td class="p-3 text-center font-bold text-secondary">3.30 กรัม</td>
+                                </tr>
+                                <tr class="hover:bg-gray-50 border-b">
+                                    <td class="p-3 border-r border-gray-100 text-center flex justify-center"><img src="AlbuTab.jpg" alt="AlbuTab" class="w-12 h-12 object-contain rounded border border-gray-200 bg-white"></td>
+                                    <td class="p-3 font-bold border-r border-gray-100">AlbuTab (ไข่ขาวอัดเม็ด)</td>
+                                    <td class="p-3 text-center border-r border-gray-100">1 เม็ด</td>
+                                    <td class="p-3 text-center font-bold text-secondary">1.00 กรัม</td>
+                                </tr>
+                                <tr class="hover:bg-gray-50 border-b">
+                                    <td class="p-3 border-r border-gray-100 text-center flex justify-center"><img src="AminoLeban.jpg" alt="AminoLeban" class="w-12 h-12 object-contain rounded border border-gray-200 bg-white"></td>
+                                    <td class="p-3 font-bold border-r border-gray-100">Aminoleban (สูตรโรคตับ)</td>
+                                    <td class="p-3 text-center border-r border-gray-100">10 กรัม</td>
+                                    <td class="p-3 text-center font-bold text-secondary">2.50 กรัม</td>
+                                </tr>
+                                <tr class="hover:bg-gray-50 border-b">
+                                    <td class="p-3 border-r border-gray-100 text-center flex justify-center"><img src="Immuplex.jpg" alt="Immuplex" class="w-12 h-12 object-contain rounded border border-gray-200 bg-white"></td>
+                                    <td class="p-3 font-bold border-r border-gray-100">Immuplex (เวย์โปรตีนไอโซเลท)</td>
+                                    <td class="p-3 text-center border-r border-gray-100">10 กรัม</td>
+                                    <td class="p-3 text-center font-bold text-secondary">9.00 กรัม</td>
+                                </tr>
+                                <tr class="hover:bg-gray-50 border-b">
+                                    <td class="p-3 border-r border-gray-100 text-center flex justify-center"><img src="KalG.jpg" alt="Kal-G" class="w-12 h-12 object-contain rounded border border-gray-200 bg-white"></td>
+                                    <td class="p-3 font-bold border-r border-gray-100">Kal-G (คอลลาเจน)</td>
+                                    <td class="p-3 text-center border-r border-gray-100">2.5 กรัม</td>
+                                    <td class="p-3 text-center font-bold text-secondary">2.37 กรัม</td>
+                                </tr>
+                                <tr class="hover:bg-gray-50 border-b">
+                                    <td class="p-3 border-r border-gray-100 text-center flex justify-center"><img src="NeproLp.jpg" alt="Nepro LP" class="w-12 h-12 object-contain rounded border border-gray-200 bg-white"></td>
+                                    <td class="p-3 font-bold border-r border-gray-100">Nepro LP (สูตรโรคไต)</td>
+                                    <td class="p-3 text-center border-r border-gray-100">237 ml (1 กระป๋อง)</td>
+                                    <td class="p-3 text-center font-bold text-secondary">10.60 กรัม</td>
+                                </tr>
+                                <tr class="hover:bg-gray-50 border-b">
+                                    <td class="p-3 border-r border-gray-100 text-center flex justify-center"><img src="Once.jpg" alt="ONCE" class="w-12 h-12 object-contain rounded border border-gray-200 bg-white"></td>
+                                    <td class="p-3 font-bold border-r border-gray-100">ONCE</td>
+                                    <td class="p-3 text-center border-r border-gray-100">8.0 กรัม</td>
+                                    <td class="p-3 text-center font-bold text-secondary">1.63 กรัม</td>
+                                </tr>
+                                <tr class="hover:bg-gray-50 border-b">
+                                    <td class="p-3 border-r border-gray-100 text-center flex justify-center"><img src="Peptamen.jpg" alt="Peptamen" class="w-12 h-12 object-contain rounded border border-gray-200 bg-white"></td>
+                                    <td class="p-3 font-bold border-r border-gray-100">Peptamen</td>
+                                    <td class="p-3 text-center border-r border-gray-100">≈ 8.5 กรัม</td>
+                                    <td class="p-3 text-center font-bold text-secondary">1.36 กรัม</td>
+                                </tr>
+                                <tr class="hover:bg-gray-50">
+                                    <td class="p-3 border-r border-gray-100 text-center flex justify-center"><img src="Prosure.jpg" alt="Prosure" class="w-12 h-12 object-contain rounded border border-gray-200 bg-white"></td>
+                                    <td class="p-3 font-bold border-r border-gray-100">Prosure (สูตรโรคมะเร็ง)</td>
+                                    <td class="p-3 text-center border-r border-gray-100">≈ 8.33 กรัม</td>
+                                    <td class="p-3 text-center font-bold text-secondary">1.77 กรัม</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
             </div>
         </div>
-    </div> 
-    
     <script>
         // === ฟังก์ชันสลับแท็บ ===
         function switchTab(tabId, btnElement) {
