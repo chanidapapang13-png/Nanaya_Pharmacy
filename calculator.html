@@ -826,7 +826,35 @@
             
             document.getElementById(`${productId}-res-protein`).innerText = receivedProtein.toFixed(1);
         }
+// === ฟังก์ชันควบคุม Checkbox โรคร่วม ===
+function toggleNone() {
+    const isChecked = document.getElementById('chk_none').checked;
+    if (isChecked) {
+        // ถ้าเลือก "ไม่มีโรคร่วม" ให้ติ๊กอันอื่นๆ ออกให้หมด
+        document.querySelectorAll('.condition-chk').forEach(chk => {
+            chk.checked = false;
+        });
+    }
+}
 
+function uncheckNone() {
+    // ถ้ามีการติ๊กโรคร่วมอื่นๆ ให้เอาติ๊ก "ไม่มีโรคร่วม" ออก
+    const chkNone = document.getElementById('chk_none');
+    if (chkNone) chkNone.checked = false;
+}
+
+function toggleKidney(stage) {
+    uncheckNone(); // เอาติ๊ก "ไม่มีโรคร่วม" ออกด้วย
+    
+    // บังคับให้เลือกโรคไตได้แค่ระยะเดียว (Radio-like behavior)
+    const stages = ['early', 'non', 'dialysis'];
+    stages.forEach(s => {
+        if (s !== stage) {
+            const chk = document.getElementById('chk_dkd_' + s);
+            if (chk) chk.checked = false;
+        }
+    });
+}
 // ==========================================
 // ฟังก์ชันสำหรับแท็บ 1: ฟอร์มและการคำนวณหลัก
 // ==========================================
@@ -1020,3 +1048,10 @@ function calculate() {
         alert("เกิดข้อผิดพลาดในการคำนวณ โปรดตรวจสอบข้อมูลอีกครั้ง");
     }
 }
+// อัปเดตหน่วยของวัตถุดิบเริ่มต้น เมื่อโหลดหน้าเว็บเสร็จ
+window.onload = function() {
+    updateUnits();
+};
+        </script>
+</body>
+</html>
