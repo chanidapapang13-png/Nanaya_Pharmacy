@@ -266,7 +266,22 @@
                 
     <div id="tab-2" class="tab-content w-full"> 
             <div class="p-5 md:p-8 space-y-12">
-                
+<div id="tab2-protein-summary" class="hidden bg-blue-50 border border-blue-200 rounded-xl p-4 mb-8 shadow-sm text-left">
+    <div class="flex items-center gap-3">
+        <div class="bg-blue-100 p-2 rounded-lg text-blue-600 shrink-0">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+            </svg>
+        </div>
+        <div>
+            <p class="text-[16px] text-gray-800 font-medium">
+                เป้าหมายโปรตีนของคุณคือ: 
+                <span id="tab2-target-protein" class="text-xl font-bold text-blue-700 ml-1">0 - 0</span> 
+                <span class="text-gray-600 font-normal">กรัม/วัน</span>
+            </p>
+        </div>
+    </div>
+</div>                
         <section class="w-full">
                 <h2 class="text-xl font-bold text-gray-800 mb-4 border-l-4 border-gray-400 pl-3">ตารางอ้างอิง: ปริมาณเพื่อให้ได้โปรตีน ~20 กรัม</h2>
                     <div class="bg-blue-50 border border-blue-200 rounded-xl p-4 mb-4 text-gray-800 text-[15px]">
@@ -1184,7 +1199,13 @@ function calculate() {
         
         const tab3SummaryEl = document.getElementById('tab3-protein-summary');
         if(tab3SummaryEl) tab3SummaryEl.classList.remove('hidden');
-
+        
+        const tab2TargetEl = document.getElementById('tab2-target-protein');
+        if(tab2TargetEl) tab2TargetEl.innerText = finalProteinStr;
+        
+        const tab2SummaryEl = document.getElementById('tab2-protein-summary');
+        if(tab2SummaryEl) tab2SummaryEl.classList.remove('hidden');
+        
         // แสดงผล section แผงสีฟ้า
         const resultSection = document.getElementById('result-section');
         if(resultSection) {
